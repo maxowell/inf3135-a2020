@@ -13,18 +13,19 @@ Maxime Ouellet (OUEM03019908)
 
 ## Contenu du projet
 
-.gitignore : Contient le REGEX des fichiers à ne pas inclure dans le dépôt git.
+`.gitignore` : Contient le REGEX des fichiers à ne pas inclure dans le dépôt git.
 
-Makefile : Permet de télécharger, produire, réinitialiser et éxécuter le projet.
+`Makefile` : Permet de télécharger, produire, réinitialiser et éxécuter le projet.
 
-cp.txt : Contient mon code permanent en majuscule.
+`cp.txt` : Contient mon code permanent en majuscule.
 
-liste.sh : 
+`liste.sh` : 
 
-tp1.c : Contient le code source de mon projet.
+`tp1.c` : Contient le code source de mon projet.
 
 ## Références
 
 ## Statut
 
 ## Autoévaluation
+
