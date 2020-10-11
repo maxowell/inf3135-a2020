@@ -2,9 +2,71 @@
 #include <stdbool.h>
 #include "tcv.h"
 #include "/usr/include/CUnit/Basic.h"
+//#include "/usr/include/CUnit/Automated.h"
+//#include "/usr/include/CUnit/Console.h"
+
 
 int init_suite(void) { return 0; }
 int clean_suite(void) { return 0; }
+
+void test_validerTH_1 () {
+	CU_ASSERT_TRUE(validerTH_1(200));
+	CU_ASSERT_TRUE(validerTH_1(400));
+	CU_ASSERT_FALSE(validerTH_1(169));
+	CU_ASSERT_FALSE(validerTH_1(401));
+	CU_ASSERT_FALSE(validerTH_1(100));
+	CU_ASSERT_FALSE(validerTH_1(-200));
+	CU_ASSERT_FALSE(validerTH_1(700));
+	CU_ASSERT_FALSE(validerTH_1(-600));
+}
+
+void test_validerTH_2 () {
+	CU_ASSERT_TRUE(validerTH_2(20));
+	CU_ASSERT_TRUE(validerTH_2(40));
+	CU_ASSERT_FALSE(validerTH_2(16));
+	CU_ASSERT_FALSE(validerTH_2(40));
+	CU_ASSERT_FALSE(validerTH_2(10));
+	CU_ASSERT_FALSE(validerTH_2(-20));
+	CU_ASSERT_FALSE(validerTH_2(90));
+	CU_ASSERT_FALSE(validerTH_2(-90));
+}
+
+void test_validerTH_3 () {
+	CU_ASSERT_TRUE(validerTH_3(200));
+	CU_ASSERT_TRUE(validerTH_3(400));
+	CU_ASSERT_FALSE(validerTH_3(169));
+	CU_ASSERT_FALSE(validerTH_3(401));
+	CU_ASSERT_FALSE(validerTH_3(100));
+	CU_ASSERT_FALSE(validerTH_3(-200));
+	CU_ASSERT_FALSE(validerTH_3(700));
+	CU_ASSERT_FALSE(validerTH_3(-600));
+}
+
+void test_validerTA_1 () {
+	CU_ASSERT_TRUE(validerTA_1(169));
+	CU_ASSERT_TRUE(validerTA_1(169));
+	CU_ASSERT_FALSE(validerTA_1(169));
+	CU_ASSERT_FALSE(validerTA_1(169));
+	CU_ASSERT_FALSE(validerTA_1(169));
+	CU_ASSERT_FALSE(validerTA_1(169));
+	CU_ASSERT_FALSE(validerTA_1(169));
+	CU_ASSERT_FALSE(validerTA_1(169));
+	CU_ASSERT_FALSE(validerTA_1(169));
+
+}
+//void test_validerTA_1 () {}
+//void test_validerTA_1 () {}
+
+//void test_validerPulsation_1 () {}
+//void test_validerPulsation_1 () {}
+//void test_validerPulsation_1 () {}
+
+//void test_validerSignal_1 () {}
+//void test_validerSignal_1 () {}
+//void test_validerSignal_1 () {}
+
+
+
 
 int main ( void )
 {
@@ -17,16 +79,17 @@ int main ( void )
    /* add a suite to the registry */
    pSuite = CU_add_suite( "tp1_test_suite", init_suite, clean_suite );
    if ( NULL == pSuite ) {
-      CU_cleanup_registry();
-      return CU_get_error();
+	CU_cleanup_registry();
+	return CU_get_error();
+   }
 
 
    /* add the tests to the suite */
-   if ( (NULL == CU_add_test(pSuite, "test_validerTH_1", test_validerTH_1)) //||
-        //(NULL == CU_add_test(pSuite, "test_validerTH_2", test_validerTH_2)) ||
-        //(NULL == CU_add_test(pSuite, "test_validerTH_3", test_validerTH_3)) ||
+   if ( (NULL == CU_add_test(pSuite, "test_validerTH_1", test_validerTH_1)) ||
+        (NULL == CU_add_test(pSuite, "test_validerTH_2", test_validerTH_2)) ||
+        (NULL == CU_add_test(pSuite, "test_validerTH_3", test_validerTH_3)) ||
 
-        //(NULL == CU_add_test(pSuite, "test_validerTA_1", test_validerTH_1)) ||
+        (NULL == CU_add_test(pSuite, "test_validerTA_1", test_validerTH_1)) //||
         //(NULL == CU_add_test(pSuite, "test_validerTA_2", test_validerTH_2)) ||
         //(NULL == CU_add_test(pSuite, "test_validerTA_3", test_validerTH_3)) ||
 
@@ -49,49 +112,8 @@ int main ( void )
    printf("\n");
    CU_basic_show_failures(CU_get_failure_list());
    printf("\n\n");
-/* 
-   // LES modes interactifs
-   // Run all tests using the automated interface
-   CU_automated_run_tests();
-   CU_list_tests_to_file();
 
-   // Run all tests using the console interface
-   CU_console_run_tests();
-*/
    /* Clean up registry and return */
    CU_cleanup_registry();
    return CU_get_error();
 }
-
-void test_validerTH_1 () {
-	CU_ASSERT_TRUE(validerTH_1(20));
-}
-
-//void test_validerTH_2 () {}
-
-//void test_validerTH_3 () {}
-
-//void test_validerTA_1 () {}
-
-//void test_validerTA_2 () {}
-
-//void test_validerTA_3 () {}
-
-//void test_validerPulsation_1 () {}
-
-//void test_validerPulsation_2 () {}
-
-//void test_validerPulsation_3 () {}
-
-//void test_validerSignal_1 () {}
-
-//void test_validerSignal_2 () {}
-
-//void test_validerSignal_3 () {}
-
-
-
-
-
-
-

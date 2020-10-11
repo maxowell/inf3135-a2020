@@ -1,5 +1,5 @@
 make:	tcv.h
-	gcc -Wall -Werror=vla -pedantic -std=c11 tp1.c -o tp1
+	gcc -Wall -Werror=vla -pedantic -std=c11 -I/usr/include/CUnit -L/usr/lib/x86_64-linux-gnu tp1.c -o tp1 tcv.o -lcunit
 
 clean:
 	rm -f tp1 tcv.o tcv.h
