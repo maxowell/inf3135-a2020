@@ -19,24 +19,24 @@ int main ( void )
    if ( NULL == pSuite ) {
       CU_cleanup_registry();
       return CU_get_error();
-   
+
 
    /* add the tests to the suite */
-   if ( (NULL == CU_add_test(pSuite, "test_validerTH_1", test_validerTH_1)) ||
-        (NULL == CU_add_test(pSuite, "test_validerTH_2", test_validerTH_2)) ||
-        (NULL == CU_add_test(pSuite, "test_validerTH_3", test_validerTH_3)) ||
+   if ( (NULL == CU_add_test(pSuite, "test_validerTH_1", test_validerTH_1)) //||
+        //(NULL == CU_add_test(pSuite, "test_validerTH_2", test_validerTH_2)) ||
+        //(NULL == CU_add_test(pSuite, "test_validerTH_3", test_validerTH_3)) ||
 
-        (NULL == CU_add_test(pSuite, "test_validerTA_1", test_validerTH_1)) ||
-        (NULL == CU_add_test(pSuite, "test_validerTA_2", test_validerTH_2)) ||
-        (NULL == CU_add_test(pSuite, "test_validerTA_3", test_validerTH_3)) ||
+        //(NULL == CU_add_test(pSuite, "test_validerTA_1", test_validerTH_1)) ||
+        //(NULL == CU_add_test(pSuite, "test_validerTA_2", test_validerTH_2)) ||
+        //(NULL == CU_add_test(pSuite, "test_validerTA_3", test_validerTH_3)) ||
 
-        (NULL == CU_add_test(pSuite, "test_validerPulsation_1", test_validerPulsation_1)) ||
-        (NULL == CU_add_test(pSuite, "test_validerPulsation_2", test_validerPulsation_2)) ||
-        (NULL == CU_add_test(pSuite, "test_validerPulsation_3", test_validerPulsation_3)) ||
+        //(NULL == CU_add_test(pSuite, "test_validerPulsation_1", test_validerPulsation_1)) ||
+        //(NULL == CU_add_test(pSuite, "test_validerPulsation_2", test_validerPulsation_2)) ||
+        //(NULL == CU_add_test(pSuite, "test_validerPulsation_3", test_validerPulsation_3)) ||
 
-        (NULL == CU_add_test(pSuite, "test_validerSignal_1", test_validerSignal_1)) ||
-        (NULL == CU_add_test(pSuite, "test_validerSignal_2", test_validerSignal_2)) ||
-        (NULL == CU_add_test(pSuite, "test_validerSignal_3", test_validerSignal_3))
+        //(NULL == CU_add_test(pSuite, "test_validerSignal_1", test_validerSignal_1)) ||
+        //(NULL == CU_add_test(pSuite, "test_validerSignal_2", test_validerSignal_2)) ||
+        //(NULL == CU_add_test(pSuite, "test_validerSignal_3", test_validerSignal_3))
 	)
    {
       CU_cleanup_registry();
@@ -63,53 +63,31 @@ int main ( void )
    return CU_get_error();
 }
 
-bool test_validerTH_1 () {
-	return 0;
+void test_validerTH_1 () {
+	CU_ASSERT_TRUE(validerTH_1(20));
 }
 
-bool test_validerTH_2 () {
-	return 0;
-}
+//void test_validerTH_2 () {}
 
-bool test_validerTH_3 () {
-	return 0;
-}
+//void test_validerTH_3 () {}
 
-bool test_validerTA_1 () {
-	return 0;
-}
+//void test_validerTA_1 () {}
 
-bool test_validerTA_2 () {
-	return 0;
-}
+//void test_validerTA_2 () {}
 
-bool test_validerTA_3 () {
-	return 0;
-}
+//void test_validerTA_3 () {}
 
-bool test_validerPulsation_1 () {
-	return 0;
-}
+//void test_validerPulsation_1 () {}
 
-bool test_validerPulsation_2 () {
-	return 0;
-}
+//void test_validerPulsation_2 () {}
 
-bool test_validerPulsation_3 () {
-	return 0;
-}
+//void test_validerPulsation_3 () {}
 
-bool test_validerSignal_1 () {
-	return 0;
-}
+//void test_validerSignal_1 () {}
 
-bool test_validerSignal_2 () {
-	return 0;
-}
+//void test_validerSignal_2 () {}
 
-bool test_validerSignal_3 () {
-	return 0;
-}
+//void test_validerSignal_3 () {}
 
 
 

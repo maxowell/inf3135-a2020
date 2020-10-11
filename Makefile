@@ -2,7 +2,7 @@ make:	tcv.h
 	gcc -Wall -Werror=vla -pedantic -std=c11 tp1.c -o tp1
 
 clean:
-	rm tp1 tcv.o tcv.h
+	rm -f tp1 tcv.o tcv.h
 
 lib:
 	mkdir data
