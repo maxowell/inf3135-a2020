@@ -11,7 +11,7 @@ Maxime Ouellet (OUEM03019908)
 
 ## Fonctionnement
 
-### En utilisant Makefile :
+### En utilisant le fichier Makefile :
 
 `make lib` : Télécharge ou met à jour les fichiers `tcv.h` et `tcv.o`.
 
@@ -41,5 +41,41 @@ Maxime Ouellet (OUEM03019908)
 
 ## Statut
 
+Complété et fonctionnel. Quelques ajustements à faire.
+
 ## Autoévaluation
+
+### Fonctionnabilité :
+
+Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. 3.0/3.0
+
+### Bash :
+
+Le script bash liste tous les noms des fonctions dont les tests passent en entièreté. 1.0/1.0
+
+### Compilation :
+
+Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. 1.0/1.0
+
+### Récupération :
+
+La récupération du projet est sans problème et le dépôt est privé. 1.0/1.0
+
+### Branche (git) :
+
+
+
+### Makefile :
+
+Le fichier Makefile offre les quatres services demandés. 2.0/2.0
+
+### Markdown :
+
+
+
+### Professionnel : 
+
+Le projet est simple, organisé et compréhensible. 0.5/0.5
+
+
 
