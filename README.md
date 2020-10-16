@@ -11,6 +11,16 @@ Maxime Ouellet (OUEM03019908)
 
 ## Fonctionnement
 
+### En utilisant Makefile
+
+`make lib` : Télécharge ou met à jour les fichiers `tcv.h` et `tcv.o`.
+
+`make` : Produit ou met à jour l'éxécutable `tp1`.
+
+`make test` : Exécute le programme `tp1`.
+
+`make clean` : Réinitialise le projet à son état d'origine.
+ 
 ## Contenu du projet
 
 `.gitignore` : Contient le REGEX des fichiers à ne pas inclure dans le dépôt git.
