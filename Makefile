@@ -11,4 +11,5 @@ lib:
 	rm -rf data
 
 test:
-	./tp1
+	./tp1 > stdin
+	./liste.sh

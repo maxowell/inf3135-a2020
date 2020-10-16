@@ -21,8 +21,8 @@ void test_validerTH_1 () {
 }
 
 void test_validerTH_2 () {
-	CU_ASSERT_TRUE(validerTH_2(20));
-	CU_ASSERT_TRUE(validerTH_2(40));
+	CU_ASSERT_FALSE(validerTH_2(20));
+	CU_ASSERT_FALSE(validerTH_2(40));
 	CU_ASSERT_FALSE(validerTH_2(16));
 	CU_ASSERT_FALSE(validerTH_2(40));
 	CU_ASSERT_FALSE(validerTH_2(10));
@@ -43,27 +43,105 @@ void test_validerTH_3 () {
 }
 
 void test_validerTA_1 () {
-	CU_ASSERT_TRUE(validerTA_1(169));
-	CU_ASSERT_TRUE(validerTA_1(169));
-	CU_ASSERT_FALSE(validerTA_1(169));
-	CU_ASSERT_FALSE(validerTA_1(169));
-	CU_ASSERT_FALSE(validerTA_1(169));
-	CU_ASSERT_FALSE(validerTA_1(169));
-	CU_ASSERT_FALSE(validerTA_1(169));
-	CU_ASSERT_FALSE(validerTA_1(169));
-	CU_ASSERT_FALSE(validerTA_1(169));
+	CU_ASSERT_TRUE(validerTA_1(400));
+	CU_ASSERT_TRUE(validerTA_1(-400));
+	CU_ASSERT_TRUE(validerTA_1(-200));
+	CU_ASSERT_FALSE(validerTA_1(-600));
+	CU_ASSERT_FALSE(validerTA_1(600));
+	CU_ASSERT_FALSE(validerTA_1(401));
+	CU_ASSERT_FALSE(validerTA_1(-401));
 
 }
-//void test_validerTA_1 () {}
-//void test_validerTA_1 () {}
 
-//void test_validerPulsation_1 () {}
-//void test_validerPulsation_1 () {}
-//void test_validerPulsation_1 () {}
+void test_validerTA_2 () {
+	CU_ASSERT_TRUE(validerTA_2(40));
+	CU_ASSERT_TRUE(validerTA_2(-40));
+	CU_ASSERT_TRUE(validerTA_2(-20));
+	CU_ASSERT_TRUE(validerTA_2(-60));
+	CU_ASSERT_TRUE(validerTA_2(60));
+	CU_ASSERT_TRUE(validerTA_2(41));
+	CU_ASSERT_TRUE(validerTA_2(-41));
 
-//void test_validerSignal_1 () {}
-//void test_validerSignal_1 () {}
-//void test_validerSignal_1 () {}
+}
+
+void test_validerTA_3 () {
+	CU_ASSERT_TRUE(validerTA_3(400));
+	CU_ASSERT_TRUE(validerTA_3(-400));
+	CU_ASSERT_TRUE(validerTA_2(0));
+	CU_ASSERT_TRUE(validerTA_3(-200));
+	CU_ASSERT_FALSE(validerTA_3(-600));
+	CU_ASSERT_FALSE(validerTA_3(401));
+	CU_ASSERT_FALSE(validerTA_3(-401));
+	CU_ASSERT_FALSE(validerTA_3(600));
+
+}
+
+void test_validerPulsation_1 () {
+	CU_ASSERT_TRUE(validerPulsation_1(200));
+	CU_ASSERT_TRUE(validerPulsation_1(50));
+	CU_ASSERT_TRUE(validerPulsation_1(100));
+	CU_ASSERT_FALSE(validerPulsation_1(0));
+	CU_ASSERT_FALSE(validerPulsation_1(-200));
+	CU_ASSERT_FALSE(validerPulsation_1(-10));
+	CU_ASSERT_FALSE(validerPulsation_1(20));
+	CU_ASSERT_FALSE(validerPulsation_1(300));
+}
+
+void test_validerPulsation_2 () {
+	CU_ASSERT_TRUE(validerPulsation_2(120));
+	CU_ASSERT_TRUE(validerPulsation_2(50));
+	CU_ASSERT_FALSE(validerPulsation_2(20));
+	CU_ASSERT_FALSE(validerPulsation_2(-120));
+	CU_ASSERT_FALSE(validerPulsation_2(0));
+	CU_ASSERT_FALSE(validerPulsation_2(-50));
+	CU_ASSERT_FALSE(validerPulsation_2(-40));
+	CU_ASSERT_FALSE(validerPulsation_2(40));
+
+}
+
+void test_validerPulsation_3 () {
+	CU_ASSERT_TRUE(validerPulsation_3(200));
+	CU_ASSERT_TRUE(validerPulsation_3(50));
+	CU_ASSERT_TRUE(validerPulsation_3(100));
+	CU_ASSERT_FALSE(validerPulsation_3(0));
+	CU_ASSERT_FALSE(validerPulsation_3(-200));
+	CU_ASSERT_FALSE(validerPulsation_3(-10));
+	CU_ASSERT_FALSE(validerPulsation_3(20));
+	CU_ASSERT_FALSE(validerPulsation_3(300));
+}
+
+void test_validerSignal_1 () {
+	CU_ASSERT_TRUE(validerSignal_1(-85));
+	CU_ASSERT_TRUE(validerSignal_1(-25));
+	CU_ASSERT_TRUE(validerSignal_1(-40));
+	CU_ASSERT_FALSE(validerSignal_1(0));
+	CU_ASSERT_FALSE(validerSignal_1(-86));
+	CU_ASSERT_FALSE(validerSignal_1(-10));
+	CU_ASSERT_FALSE(validerSignal_1(30));
+	CU_ASSERT_FALSE(validerSignal_1(83));
+}
+
+void test_validerSignal_2 () {
+	CU_ASSERT_TRUE(validerSignal_2(-85));
+	CU_ASSERT_TRUE(validerSignal_2(-25));
+	CU_ASSERT_TRUE(validerSignal_2(-40));
+	CU_ASSERT_FALSE(validerSignal_2(0));
+	CU_ASSERT_FALSE(validerSignal_2(-86));
+	CU_ASSERT_FALSE(validerSignal_2(-10));
+	CU_ASSERT_FALSE(validerSignal_2(30));
+	CU_ASSERT_FALSE(validerSignal_2(83));
+}
+
+void test_validerSignal_3 () {
+	CU_ASSERT_TRUE(validerSignal_3(-85));
+	CU_ASSERT_TRUE(validerSignal_3(-25));
+	CU_ASSERT_TRUE(validerSignal_3(-40));
+	CU_ASSERT_FALSE(validerSignal_3(0));
+	CU_ASSERT_FALSE(validerSignal_3(-86));
+	CU_ASSERT_FALSE(validerSignal_3(-10));
+	CU_ASSERT_FALSE(validerSignal_3(30));
+	CU_ASSERT_FALSE(validerSignal_3(83));
+}
 
 
 
@@ -89,17 +167,17 @@ int main ( void )
         (NULL == CU_add_test(pSuite, "test_validerTH_2", test_validerTH_2)) ||
         (NULL == CU_add_test(pSuite, "test_validerTH_3", test_validerTH_3)) ||
 
-        (NULL == CU_add_test(pSuite, "test_validerTA_1", test_validerTH_1)) //||
-        //(NULL == CU_add_test(pSuite, "test_validerTA_2", test_validerTH_2)) ||
-        //(NULL == CU_add_test(pSuite, "test_validerTA_3", test_validerTH_3)) ||
+        (NULL == CU_add_test(pSuite, "test_validerTA_1", test_validerTA_1)) ||
+        (NULL == CU_add_test(pSuite, "test_validerTA_2", test_validerTA_2)) ||
+        (NULL == CU_add_test(pSuite, "test_validerTA_3", test_validerTA_3)) ||
 
-        //(NULL == CU_add_test(pSuite, "test_validerPulsation_1", test_validerPulsation_1)) ||
-        //(NULL == CU_add_test(pSuite, "test_validerPulsation_2", test_validerPulsation_2)) ||
-        //(NULL == CU_add_test(pSuite, "test_validerPulsation_3", test_validerPulsation_3)) ||
+        (NULL == CU_add_test(pSuite, "test_validerPulsation_1", test_validerPulsation_1)) ||
+        (NULL == CU_add_test(pSuite, "test_validerPulsation_2", test_validerPulsation_2)) ||
+        (NULL == CU_add_test(pSuite, "test_validerPulsation_3", test_validerPulsation_3)) ||
 
-        //(NULL == CU_add_test(pSuite, "test_validerSignal_1", test_validerSignal_1)) ||
-        //(NULL == CU_add_test(pSuite, "test_validerSignal_2", test_validerSignal_2)) ||
-        //(NULL == CU_add_test(pSuite, "test_validerSignal_3", test_validerSignal_3))
+        (NULL == CU_add_test(pSuite, "test_validerSignal_1", test_validerSignal_1)) ||
+        (NULL == CU_add_test(pSuite, "test_validerSignal_2", test_validerSignal_2)) ||
+        (NULL == CU_add_test(pSuite, "test_validerSignal_3", test_validerSignal_3))
 	)
    {
       CU_cleanup_registry();
