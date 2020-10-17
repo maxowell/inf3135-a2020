@@ -12,4 +12,5 @@ lib:
 
 test:
 	./tp1 > stdin
+	cat stdin
 	./liste.sh
