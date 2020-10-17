@@ -48,7 +48,7 @@ Complété et fonctionnel. Quelques ajustements à faire.
 
 ### Q1 : Les valeurs décimales sont nocives pour l'ordinateur, pourquoi ?
 
-
+Puisque l'ordinateur à un nombre fini de valeurs qu'il peut représenter, il lui est impossible d'avoir une représentation pour l'infinitude de nombres décimaux qui existent. Ainsi, l'ordinateur utilise une méthode d'écriture pour les nombres réels qui se nomme 'Virgule flottante'. Cette méthode à toutefois ces limites et ne peut pas représenter avec précision tous les nombres réels, ce qui peut causer certaines imprécisions dans les calculs effectués par l'ordinateur. 
 
 ### Q2 : Vous devez respecter les limites des types de données, pourquoi ?
 
