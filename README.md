@@ -20,8 +20,6 @@ Maxime Ouellet (OUEM03019908)
 
 `make test` : Exécute le programme `tp1`.
 
-![](./ressources/makeTest.png)
-
 `make clean` : Réinitialise le projet à son état d'origine.
 
 ![](./ressources/makeClean.png)
