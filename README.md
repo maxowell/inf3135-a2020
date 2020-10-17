@@ -14,15 +14,17 @@ Maxime Ouellet (OUEM03019908)
 
 `make lib` : Télécharge ou met à jour les fichiers `tcv.h` et `tcv.o`.
 
-![](./makeLib.png)
+![](./ressources/makeLib.png)
 
 `make` : Produit ou met à jour l'éxécutable `tp1`.
 
 `make test` : Exécute le programme `tp1`.
 
-![](./makeTest.png)
+![](./ressources/makeTest.png)
 
 `make clean` : Réinitialise le projet à son état d'origine.
+
+![](./ressources/makeClean.png)
 
 ## Contenu du projet
 
