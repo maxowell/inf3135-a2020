@@ -38,7 +38,9 @@ Maxime Ouellet (OUEM03019908)
 
 ## Références
 
-Aucune source à spécifier.
+### CUnit
+
+http://cunit.sourceforge.net/example.html
 
 ## Statut
 

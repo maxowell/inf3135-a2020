@@ -2,9 +2,6 @@
 #include <stdbool.h>
 #include "tcv.h"
 #include "/usr/include/CUnit/Basic.h"
-//#include "/usr/include/CUnit/Automated.h"
-//#include "/usr/include/CUnit/Console.h"
-
 
 int init_suite(void) { return 0; }
 int clean_suite(void) { return 0; }
