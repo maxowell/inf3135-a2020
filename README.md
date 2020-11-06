@@ -1,4 +1,4 @@
-# Travail pratique 1
+# Travail pratique 2
 
 ## Description
 
@@ -12,13 +12,21 @@ Maxime Ouellet (OUEM03019908)
 
 ### En utilisant le fichier Makefile :
 
+??? `make` : Exécute la cible `default`. ???
+
 `make lib` : Télécharge ou met à jour les fichiers `tcv.h` et `tcv.o`.
 
 ![](./ressources/makeLib.png)
 
-`make` : Produit ou met à jour l'éxécutable `tp1`.
+`make tp1` : Produit ou met à jour l'éxécutable `tp1`.
 
-`make test` : Exécute le programme `tp1`.
+`make tp2` : Produit ou met à jour l'éxécutable `tp2`.
+
+`make test-tp1a` : Exécute le programme `tp1`.
+
+`make test-tp1b` : Exécute le programme `tp1` puis le script `liste.sh`.
+
+`make test-tp2` : Exécute le programme `tp2`.
 
 `make clean` : Réinitialise le projet à son état d'origine.
 
@@ -34,7 +42,15 @@ Maxime Ouellet (OUEM03019908)
 
 `liste.sh` : Script bash qui affiche les noms des fonctions qui sont valides et fonctionnelles.
 
-`tp1.c` : Contient le code source de mon projet.
+`tp1.c` : Contient le code source de mon travail pratique 1.
+
+`tp2.c` : Contient le code source de mon travail pratique 2.
+
+Répertoire `ressources` : Contient les images pour ce fichier et les fichiers contenant des transactions en entrée.
+
+## Processus de réflexion et démarche
+
+Voir mon processus de réflexion et démarche [ici](reflexion.md) 
 
 ## Références
 
@@ -44,17 +60,7 @@ http://cunit.sourceforge.net/example.html
 
 ## Statut
 
-Complété et fonctionnel. Quelques ajustements à faire.
-
-## Réponses
-
-### Q1 : Les valeurs décimales sont nocives pour l'ordinateur, pourquoi ?
-
-Puisque l'ordinateur à un nombre fini de valeurs qu'il peut représenter, il lui est impossible d'avoir une représentation pour l'infinitude de nombres décimaux qui existent. Ainsi, l'ordinateur utilise une méthode d'écriture pour les nombres réels qui se nomme 'Virgule flottante'. Cette méthode à toutefois ces limites et ne peut pas représenter avec précision tous les nombres réels, ce qui peut causer certaines imprécisions dans les calculs effectués par l'ordinateur. 
-
-### Q2 : Vous devez respecter les limites des types de données, pourquoi ?
-
-Parce que chaque type est un certain nombre de bits, et si on dépasse la capacité de représentation de ce nombre, alors il fera un tour de boucle puis recommencera à 0. Par exemple, si on prend une variable de type char non-signé, la variable est sur 8 bits et donc sa capacité de représentation = 2^8 = 256. Si on entre la valeur 300 dans cette variable, après avoir atteint 256, la variable va faire un tour de boucle et retourner à 0, avant d'ajouter le reste de la valeur. Ainsi, la valeur réellement affectée sera 300 - 256 = 44.
+Non complété. En cours.
 
 ## Autoévaluation
 
