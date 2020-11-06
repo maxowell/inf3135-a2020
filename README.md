@@ -50,7 +50,7 @@ Répertoire `ressources` : Contient les images pour ce fichier et les fichiers c
 
 ## Processus de réflexion et démarche
 
-Voir mon processus de réflexion et démarche [ici](reflexion.md) 
+Voir mon processus de réflexion et démarche [ici](reflexion.md).
 
 ## Références
 
@@ -64,37 +64,47 @@ Non complété. En cours.
 
 ## Autoévaluation
 
-### Fonctionnabilité :
-
-Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. 3.0/3.0
-
-### Bash :
-
-Le script bash liste tous les noms des fonctions dont les tests passent en entièreté. 1.0/1.0
-
-### Compilation :
-
-Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. 1.0/1.0
-
 ### Récupération :
 
-La récupération du projet est sans problème et le dépôt est privé. 1.0/1.0
-
-### Branche (git) :
-
-La branche est une branche de développement nommée testunitaire. 1.0/1.0
+La récupération du projet est sans problème et le dépôt est privé. /1.0
 
 ### Makefile :
 
-Le fichier Makefile offre les quatres services demandés. 2.0/2.0
+Le fichier Makefile offre tous les services demandés. /2.0
 
-### Markdown :
+### malib.h/c :
 
-Le fichier README est de type markdown et bien structuré. 0.5/0.5
+Détection des inclusions multiples. /1.0
+
+### Compilation :
+
+Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. /2.0
+
+### Fonctionnabilité :
+
+Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. /8.0
+
+### Branche (git) :
+
+La branche est une branche de développement nommée tp2. /1.0
+
+### Issues (git) :
+
+Je suis intervenu au moins une fois et au plus deux fois. /1.0
+
+### Optimal (git) :
+
+/1.0
 
 ### Professionnel : 
 
-Le projet est simple, organisé et compréhensible. 0.5/0.5
+Le projet est simple, organisé et compréhensible. /2.0
 
+### Markdown :
 
+Le fichier README et reflexion sont de type markdown et bien structurés. /1.0
+
+### Bonus :
+
+GitHub action (YAML). /1.0
 
