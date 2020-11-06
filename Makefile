@@ -1,8 +1,8 @@
 tp1:	tcv.h
 	gcc -Wall -Werror=vla -pedantic -std=c11 -I/usr/include/CUnit -L/usr/lib/x86_64-linux-gnu tp1.c -o tp1 tcv.o -lcunit
 
-tp2:
-	gcc -Wall -Werror=vla -pedantic -std=c11 -I/usr/include/CUnit -L/usr/lib/x86_64-linux-gnu tp2.c -o tp2
+tp2:	tp2.c
+	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -o tp2
 
 default:	tp2
 
