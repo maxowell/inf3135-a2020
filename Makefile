@@ -4,8 +4,6 @@ tp1:	tcv.h
 tp2:	tp2.c
 	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -o tp2
 
-default:	tp2
-
 clean:
 	rm -f tp1 tcv.o tcv.h tp2
 
@@ -19,9 +17,10 @@ test-tp1a:	tp1
 	./tp1
 
 test-tp1b:	tp1
-	./tp1 > stdin
-	cat stdin
-	./liste.sh
+	./tp1 | bash liste.sh
 
 test-tp2:	tp2
 	./tp2
+
+tcv.h:
+	make lib
