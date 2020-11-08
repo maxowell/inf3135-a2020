@@ -1,4 +1,4 @@
-make:	tcv.h
+make: tcv.h tcv.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 -I/usr/include/CUnit -L/usr/lib/x86_64-linux-gnu tp1.c -o tp1 tcv.o -lcunit
 
 clean:
@@ -11,6 +11,7 @@ lib:
 	rm -rf data
 
 test:
-	./tp1 > stdin
-	cat stdin
-	./liste.sh
+	./tp1 | bash liste.sh
+
+tcv.h:
+	make lib
