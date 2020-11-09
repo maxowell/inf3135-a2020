@@ -26,3 +26,6 @@ test-tp2:	tp2
 
 tcv.o:
 	make lib
+
+git:
+	git add * && git commit && git push

@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -83,9 +84,9 @@ void qualiteSignal (char *_trans, pastille_s *_past) {
 	printf("14 %ld ", getTimestamp(copy));
 	strcpy(copy, _trans);
 	size_t newId = getId(copy, 0);
-	int sizeIdPN = sizeof((size_t) _past->idPN)/sizeof(_past->idPN[0]) + 1;
-	_past->idPN[sizeIdPN] = newId;
-	printf("%ld ", _past->idPN[sizeIdPN]);
+	int sizeIdPN = sizeof((size_t) _past->idPN)/sizeof(_past->idPN[0]);
+	_past->idPN[sizeIdPN-1] = newId;
+	printf("%ld ", _past->id);
 	strcpy(copy, _trans);
 	signed short signal = getSignal(copy);
 	printf("%.1f\n", getDistance(signal, _past->p));
@@ -148,8 +149,10 @@ signed short getSignal (char *_trans) {
 
 //Calcule la distance en mètres
 float getDistance (signed short *_signal, unsigned char *_p) {
-	float m = (float) (-69 - (long) _signal);
-	float n = (float) (10 * (long) _p);
+	float m = (float) (-69 - (signed short)_signal);
+	printf("\n%d\n", (signed short) _signal);
+	float n = (float) (10 * (size_t) _p);
 	float distance = (float) pow(10, m/n);
+	printf("\ndistance=%.1f m=%.1f n=%.1f\n", distance,m,n);
 	return distance;
 }
