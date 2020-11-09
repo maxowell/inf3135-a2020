@@ -82,7 +82,10 @@ void qualiteSignal (char *_trans, pastille_s *_past) {
 	strcpy(copy, _trans);
 	printf("14 %ld ", getTimestamp(copy));
 	strcpy(copy, _trans);
-	printf("%ld ", getId(copy, 0));
+	size_t newId = getId(copy, 0);
+	int sizeIdPN = sizeof((size_t) _past->idPN)/sizeof(_past->idPN[0]) + 1;
+	_past->idPN[sizeIdPN] = newId;
+	printf("%ld ", _past->idPN[sizeIdPN]);
 	strcpy(copy, _trans);
 	signed short signal = getSignal(copy);
 	printf("%.1f\n", getDistance(signal, _past->p));
@@ -95,11 +98,8 @@ void echangeData (char *_trans, pastille_s *_past) {
 	printf("15 %ld ", getTimestamp(copy));
 	strcpy(copy, _trans);
 	printf("%ld ", _past->id);
-	strcpy(copy, _trans);
-	int oldSize = sizeof((size_t)_past->idPN)/sizeof(_past->idPN[0]);
-	size_t newId = getId(copy, 1);
-	_past->idPN[oldSize - 1] = newId;
-	for (int i = 0; i < oldSize; i++) {
+	int size = sizeof((size_t)_past->idPN)/sizeof(_past->idPN[0]);
+	for (int i = 0; i < size; i++) {
 		printf("%ld ", _past->idPN[i]);
 	}
 	printf("\n");
@@ -148,8 +148,8 @@ signed short getSignal (char *_trans) {
 
 //Calcule la distance en mètres
 float getDistance (signed short *_signal, unsigned char *_p) {
-	float m = (float) (-69 - (int) _signal);
-	float n = (float) (10 * (int) _p);
+	float m = (float) (-69 - (long) _signal);
+	float n = (float) (10 * (long) _p);
 	float distance = (float) pow(10, m/n);
 	return distance;
 }

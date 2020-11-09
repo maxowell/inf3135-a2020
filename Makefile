@@ -4,7 +4,7 @@ tp1:	tcv.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 -I/usr/include/CUnit -L/usr/lib/x86_64-linux-gnu tp1.c -o tp1 tcv.o -lcunit
 
 tp2:	tp2.c
-	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -o tp2
+	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -lm -o tp2
 
 clean:
 	rm -f tp1 tcv.o tcv.h tp2
