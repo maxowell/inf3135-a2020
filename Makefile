@@ -1,4 +1,4 @@
-tp1:	tcv.h
+tp1:	tcv.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 -I/usr/include/CUnit -L/usr/lib/x86_64-linux-gnu tp1.c -o tp1 tcv.o -lcunit
 
 tp2:	tp2.c
@@ -22,5 +22,5 @@ test-tp1b:	tp1
 test-tp2:	tp2
 	./tp2
 
-tcv.h:
+tcv.o:
 	make lib
