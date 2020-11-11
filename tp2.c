@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
+#include <stdbool.h>
+#include "tcv.h"
 
 size_t getTimestamp();
 int getNumTrans();
@@ -13,6 +15,8 @@ void qualiteSignal();
 void echangeData();
 signed short getSignal();
 float getDistance();
+char* getTemp();
+signed short getTempShort();
 
 //Objet pastille.
 typedef struct {
@@ -47,13 +51,21 @@ int main () {
 				changeID(trans, past);
 				break;
 			case 1 :
+				strcpy(copy, trans);
+				char *temp = getTemp(copy);
+				if (strcmp(temp, "ERREUR") != 0 && validerTH_1(getTempShort(temp))) {
+					printf("Marche\n");
+				}
 				break;
 			case 2 :
 				break;
 			case 3 :
 				break;
 			case 4 :
-				qualiteSignal(trans, past);
+				strcpy(copy, trans);
+				if (validerSignal_2(getSignal(copy))) {
+					qualiteSignal(trans, past);
+				}
 				break;
 			case 5 :
 				echangeData(trans, past);
@@ -149,10 +161,21 @@ signed short getSignal (char *_trans) {
 
 //Calcule la distance en mètres
 float getDistance (signed short *_signal, unsigned char *_p) {
-	float m = (float) (-69 - (signed short)_signal);
-	printf("\n%d\n", (signed short) _signal);
+	float m = (float) (-69 - (signed short)(signed long)_signal);
 	float n = (float) (10 * (size_t) _p);
 	float distance = (float) pow(10, m/n);
-	printf("\ndistance=%.1f m=%.1f n=%.1f\n", distance,m,n);
 	return distance;
+}
+
+//Retourne la température d'une transaction
+char* getTemp (char *_trans) {
+	char *elem = strtok((char *)_trans, " ");
+	elem = strtok(NULL, " ");
+	elem = strtok(NULL, " ");
+	return elem;
+}
+
+//Retourne une température sous forme signed short
+signed short getTempShort (char *_temp) {
+	return (signed short)((float) atof(_temp) * 10);
 }
