@@ -17,14 +17,27 @@ signed short getSignal();
 float getDistance();
 char* getTemp();
 signed short getTempShort();
+void transaction21();
+void transaction22();
+void transaction23();
 
 //Objet pastille.
 typedef struct {
 	size_t id;
 	unsigned char p;
-	float moyenneTH;
-	float moyenneTA;
-	size_t moyennePuls;
+	float sommeTH;
+	int nombreTH;
+	size_t erreurTH;
+	int invalideTH;
+	float sommeTA;
+	int nombreTA;
+	size_t erreurTA;
+	int invalideTA;
+	size_t sommePuls;
+	int nombrePuls;
+	size_t erreurPuls;
+	int invalidePuls;
+	int sizePN;
 	size_t idPN[];
 } pastille_s;
 
@@ -32,15 +45,25 @@ int main () {
 
 	char trans[100];
 	char copy[100];
-	printf("version #: 0.0.10004\n");
+	printf("version #: 0.1.10005\n");
 
 	pastille_s *past = NULL;
 	past = malloc(sizeof(pastille_s));
 	past->id = 9999;
 	past->p = 2;
-	past->moyenneTH = 0;
-	past->moyenneTA = 0;
-	past->moyennePuls = 0;
+	past->sommeTH = 0;
+	past->nombreTH = 0;
+	past->erreurTH = 0;
+	past->invalideTH = 0;
+	past->sommeTA = 0;
+	past->nombreTA = 0;
+	past->erreurTA = 0;
+	past->invalideTA = 0;
+	past->sommePuls = 0;
+	past->nombrePuls = 0;
+	past->erreurPuls = 0;
+	past->invalidePuls = 0;
+	past->sizePN = 0;
 
 	while (fgets(trans, 100, stdin) != NULL) {
 
@@ -53,13 +76,38 @@ int main () {
 			case 1 :
 				strcpy(copy, trans);
 				char *temp = getTemp(copy);
-				if (strcmp(temp, "ERREUR") != 0 && validerTH_1(getTempShort(temp))) {
-					printf("Marche\n");
+				if (strcmp(temp, "ERREUR\n") != 0 && validerTH_1(getTempShort(temp))) {
+					past->sommeTH += (float) atof(temp);
+					past->nombreTH++;
+				} else if (strcmp(temp, "ERREUR\n") == 0) {
+					past->erreurTH++;
+				} else if (!validerTH_1(getTempShort(temp))) {
+					past->invalideTH++;
 				}
 				break;
 			case 2 :
+				strcpy(copy, trans);
+				temp = getTemp(copy);
+				if (strcmp(temp, "ERREUR\n") != 0 && validerTA_3(getTempShort(temp))) {
+					past->sommeTA += (float) atof(temp);
+					past->nombreTA++;
+				} else if (strcmp(temp, "ERREUR\n") == 0) {
+					past->erreurTA++;
+				} else if (!validerTA_3(getTempShort(temp))) {
+					past->invalideTA++;
+				}
 				break;
 			case 3 :
+				strcpy(copy, trans);
+				char *puls = getTemp(copy);
+				if (strcmp(puls, "ERREUR\n") != 0 && validerPulsation_1(atof(puls))) {
+					past->sommePuls += (size_t) atof(puls);
+					past->nombrePuls++;
+				} else if (strcmp(puls, "ERREUR\n") == 0) {
+					past->erreurPuls++;
+				} else if (!validerPulsation_3(getTempShort(puls))) {
+					past->invalidePuls++;
+				}
 				break;
 			case 4 :
 				strcpy(copy, trans);
@@ -72,7 +120,9 @@ int main () {
 				break;
 		}
 	}
-
+	transaction21(past);
+	transaction22(past);
+	transaction23(past);
 	return 0;
 }
 
@@ -96,9 +146,9 @@ void qualiteSignal (char *_trans, pastille_s *_past) {
 	printf("14 %ld ", getTimestamp(copy));
 	strcpy(copy, _trans);
 	size_t newId = getId(copy, 0);
-	int sizeIdPN = sizeof((size_t) _past->idPN)/sizeof(_past->idPN[0]);
-	_past->idPN[sizeIdPN-1] = newId;
-	printf("%ld ", _past->id);
+	_past->idPN[_past->sizePN] = newId;
+	_past->sizePN++;
+	printf("%ld ", newId);
 	strcpy(copy, _trans);
 	signed short signal = getSignal(copy);
 	printf("%.1f\n", getDistance(signal, _past->p));
@@ -111,8 +161,7 @@ void echangeData (char *_trans, pastille_s *_past) {
 	printf("15 %ld ", getTimestamp(copy));
 	strcpy(copy, _trans);
 	printf("%ld ", _past->id);
-	int size = sizeof((size_t)_past->idPN)/sizeof(_past->idPN[0]);
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < _past->sizePN; i++) {
 		printf("%ld ", _past->idPN[i]);
 	}
 	printf("\n");
@@ -178,4 +227,32 @@ char* getTemp (char *_trans) {
 //Retourne une température sous forme signed short
 signed short getTempShort (char *_temp) {
 	return (signed short)((float) atof(_temp) * 10);
+}
+
+void transaction21 (pastille_s *_past) {
+	printf("21 ");
+	if (_past->nombreTH != 0) {
+		printf("%.1f ", _past->sommeTH/_past->nombreTH);
+	} else {
+		printf("%.1f ", _past->sommeTH);
+	}
+	if (_past->nombreTA != 0) {
+		printf("%.1f ", _past->sommeTA/_past->nombreTA);
+	} else {
+		printf("%.1f ", _past->sommeTA);
+	}
+	if (_past->nombrePuls != 0) {
+		printf("%ld\n", _past->sommePuls/_past->nombrePuls);
+	} else {
+		printf("%ld\n", _past->sommePuls);
+	}
+}
+
+//Effectue la transaction pour le cumul des 
+void transaction22 (pastille_s *_past) {
+	printf("22 %d %d %d\n", _past->invalideTH, _past->invalideTA, _past->invalidePuls);
+}
+
+void transaction23(pastille_s *_past) {
+	printf("23 %ld %ld %ld\n", _past->erreurTH/3, _past->erreurTA/3, _past->erreurPuls/3);
 }
