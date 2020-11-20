@@ -2,7 +2,9 @@
 
 ## Description
 
-Le but premier de ce travail est de nous initier à la programmation en C. Dans ce travail, nous devrons implémenter les différentes fonctions qui testeront les fonctions présentes dans un programme C déjà compilé en fichier objet. Premier travail pratique à faire pour le cours INF3135 de l'UQÀM, session d'autômne 2020.
+Ce programme traite des transactions provenant d'une puce qui sont passées au programme au travers du stdin. Ces transactions sont traitées une à la fois et le programme affiche les résultats sur le stdout. 
+
+J'ai complété ce travail dans le cadre du cours INF3135 qui s'est donné à l'automne 2020 à l'Université du Québec à l'UQÀM.
 
 ## Auteur
 
@@ -46,7 +48,9 @@ Maxime Ouellet (OUEM03019908)
 
 `tp2.c` : Contient le code source de mon travail pratique 2.
 
-Répertoire `ressources` : Contient les images pour ce fichier et les fichiers contenant des transactions en entrée.
+Répertoire `ressources` : Contient les images pour ce fichier et les fichiers contenant des transactions en entrée (Pour tester).
+
+`reflexion.md` : Démontre ma réflexion par rapport au développement de ce travail.
 
 ## Processus de réflexion et démarche
 
@@ -66,11 +70,11 @@ Non complété. En cours.
 
 ### Récupération :
 
-La récupération du projet est sans problème et le dépôt est privé. /1.0
+La récupération du projet est sans problème et le dépôt est privé. 1.0/1.0
 
 ### Makefile :
 
-Le fichier Makefile offre tous les services demandés. /2.0
+Le fichier Makefile offre tous les services demandés. 2.0/2.0
 
 ### malib.h/c :
 
@@ -78,15 +82,15 @@ Détection des inclusions multiples. /1.0
 
 ### Compilation :
 
-Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. /2.0
+Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. 2.0/2.0
 
 ### Fonctionnabilité :
 
-Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. /8.0
+Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. 8.0/8.0
 
 ### Branche (git) :
 
-La branche est une branche de développement nommée tp2. /1.0
+La branche est une branche de développement nommée tp2. 1.0/1.0
 
 ### Issues (git) :
 
@@ -94,15 +98,15 @@ Je suis intervenu au moins une fois et au plus deux fois. /1.0
 
 ### Optimal (git) :
 
-/1.0
+1.0/1.0
 
 ### Professionnel : 
 
-Le projet est simple, organisé et compréhensible. /2.0
+Le projet est simple, organisé et compréhensible. 2.0/2.0
 
 ### Markdown :
 
-Le fichier README et reflexion sont de type markdown et bien structurés. /1.0
+Le fichier README et reflexion sont de type markdown et bien structurés. 1.0/1.0
 
 ### Bonus :
 
