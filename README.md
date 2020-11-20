@@ -78,7 +78,7 @@ Le fichier Makefile offre tous les services demandés. 2.0/2.0
 
 ### malib.h/c :
 
-Détection des inclusions multiples. /1.0
+Détection des inclusions multiples. 1.0/1.0
 
 ### Compilation :
 
