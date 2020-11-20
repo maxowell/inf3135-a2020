@@ -7,7 +7,7 @@ tp2:	malib.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -o tp2 tcv.o malib.o -lm
 
 clean:
-	rm -f tp1 tcv.o tcv.h tp2
+	rm -f tp1 tcv.o tcv.h tp2 malib.o
 
 lib:
 	mkdir data
@@ -29,6 +29,3 @@ tcv.o:
 
 malib.o: tcv.o
 	gcc -Wall -Werror=vla -pedantic -std=c11  -c malib.c -o malib.o
-
-git:
-	git add * && git commit && git push
