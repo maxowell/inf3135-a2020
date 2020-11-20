@@ -123,6 +123,7 @@ int main () {
 	transaction21(past);
 	transaction22(past);
 	transaction23(past);
+	free(past);
 	return 0;
 }
 
