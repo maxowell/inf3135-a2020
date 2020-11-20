@@ -6,25 +6,6 @@
 #include "tcv.h"
 #include "malib.h"
 
-typedef struct pastille_t{
-	size_t id;
-	unsigned char p;
-	float sommeTH;
-	int nombreTH;
-	size_t erreurTH;
-	int invalideTH;
-	float sommeTA;
-	int nombreTA;
-	size_t erreurTA;
-	int invalideTA;
-	size_t sommePuls;
-	int nombrePuls;
-	size_t erreurPuls;
-	int invalidePuls;
-	int sizePN;
-	size_t idPN[];
-} pastille_s;
-
 void changeID (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
