@@ -1,10 +1,10 @@
 default: tp2
 
-tp1:	tcv.o malib.o
+tp1:	tcv.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 -I/usr/include/CUnit -L/usr/lib/x86_64-linux-gnu tp1.c -o tp1 tcv.o -lcunit
 
-tp2:	tcv.o
-	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -lm -o tp2 tcv.o malib.o
+tp2:	malib.o
+	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -o tp2 tcv.o malib.o -lm
 
 clean:
 	rm -f tp1 tcv.o tcv.h tp2
@@ -27,8 +27,8 @@ test-tp2:	tp2
 tcv.o:
 	make lib
 
-malib.o:
-	gcc -Wall -Werror=vla -pedantic -std=c11  -c malib.c -o malib.o 
+malib.o: tcv.o
+	gcc -Wall -Werror=vla -pedantic -std=c11  -c malib.c -o malib.o
 
 git:
 	git add * && git commit && git push
