@@ -94,7 +94,7 @@ La branche est une branche de développement nommée tp2. 1.0/1.0
 
 ### Issues (git) :
 
-Je suis intervenu au moins une fois et au plus deux fois. /1.0
+Je suis intervenu au moins une fois et au plus deux fois. 1.0/1.0
 
 ### Optimal (git) :
 
