@@ -18,6 +18,7 @@
 		size_t erreurPuls;
 		int invalidePuls;
 		int sizePN;
+		size_t time;
 		size_t idPN[];
 	} pastille_s;
 
@@ -62,5 +63,8 @@
 
 	//Effectue la transaction pour le cumul des mots ERREUR TH TA pulsations.
 	void transaction23();
+
+	//Vérifie si le timestamp d'une transaction est inférieur au timestamp précédant.
+	bool checkTime();
 
 #endif

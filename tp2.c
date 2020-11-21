@@ -27,10 +27,15 @@ int main () {
 	past->erreurPuls = 0;
 	past->invalidePuls = 0;
 	past->sizePN = 0;
+	past->time = 0;
 
 	while (fgets(trans, 100, stdin) != NULL) {
 
 		strcpy(copy, trans);
+
+		if (!checkTime(getTimestamp(copy), past)) continue;
+
+		strcpy(copy,trans);
 
 		switch (getNumTrans(copy)) {
 			case 0 :

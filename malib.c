@@ -6,6 +6,14 @@
 #include "tcv.h"
 #include "malib.h"
 
+bool checkTime (size_t time, pastille_s *_past) {
+	if (time < _past->time) {
+		return false;
+	}
+	_past->time = time;
+	return true;
+}
+
 void changeID (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
