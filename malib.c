@@ -130,6 +130,5 @@ void transaction22 (pastille_s *_past) {
 }
 
 void transaction23(pastille_s *_past) {
-	printf("\n");
 	printf("23 %ld %ld %ld\n", _past->erreurTH/3, _past->erreurTA/3, _past->erreurPuls/3);
 }
