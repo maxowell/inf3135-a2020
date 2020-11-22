@@ -2,7 +2,8 @@ name: tp2
  
 on:
   push:
-    branches: [ tp2 ]
+    branches: 
+      - tp2
     paths: 
       - 'inf3135-a2020/malib.c'
       - 'inf3135-a2020/malib.h'
