@@ -1,4 +1,3 @@
-
 name: tp2
  
 on:
@@ -8,6 +7,7 @@ on:
       - 'inf3135-a2020/malib.c'
       - 'inf3135-a2020/malib.h'
       - 'inf3135-a2020/tp2.c'
+      - 'inf3135-a2020/.github/workflows/tp2.yml'
 
 jobs:
   build:
