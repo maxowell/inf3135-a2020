@@ -5,11 +5,11 @@ on:
     branches: 
       - tp2
     paths: 
-      - 'inf3135-a2020/malib.c'
-      - 'inf3135-a2020/malib.h'
-      - 'inf3135-a2020/tp2.c'
-      - 'inf3135-a2020/.gitignore/workflows/tp2.yml'
-      - 'inf3135-a2020/ressources/10.txt'
+      - 'malib.c'
+      - 'malib.h'
+      - 'tp2.c'
+      - '.gitignore/workflows/tp2.yml'
+      - 'ressources/10.txt'
 
 jobs:
   build:
