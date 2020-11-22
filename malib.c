@@ -3,8 +3,8 @@
 #include <math.h>
 #include <string.h>
 #include <stdbool.h>
-#include "malib.h"
 #include "tcv.h"
+#include "malib.h"
 
 bool checkTime (size_t time, pastille_s *_past) {
 	if (time < _past->time) {
