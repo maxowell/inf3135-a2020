@@ -19,8 +19,8 @@ jobs:
        
       - name: Get tcv
         run: |
-         curl -LJ tp1.zip https://github.com/guyfrancoeur/INF3135_A2020/raw/master/tp/tp1.zip
-	        unzip tp1.zip
+         make lib
+	 
 
       - name: Compiler malib
         run: gcc -Wall -Werror=vla -pedantic -std=c11  -c malib.c -o malib.o
