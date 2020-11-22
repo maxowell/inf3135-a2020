@@ -1,0 +1,26 @@
+
+name: tp2
+ 
+on:
+  push:
+    branches: [ tp2 ]
+    paths: 
+      - 'inf3135-a2020/malib.c'
+      - 'inf3135-a2020/malib.h'
+      - 'inf3135-a2020/tp2.c'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Compiler malib
+        run: gcc -Wall -Werror=vla -pedantic -std=c11  -c malib.c -o malib.o
+
+      - name: Compiler tp2
+        run: gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -o tp2 tcv.o malib.o -lm
+        
+      - name: Tester tp2
+        run: cat 'inf3135-a2020/ressources/entree01.txt' | ./tp2
+        
