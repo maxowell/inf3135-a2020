@@ -1,6 +1,5 @@
 #ifndef _MALIB_H_
 #define _MALIB_H_
-
 	//Objet pastille.
 	typedef struct pastille_t{
 		size_t id;
