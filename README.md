@@ -14,7 +14,7 @@ Maxime Ouellet (OUEM03019908)
 
 ### En utilisant le fichier Makefile :
 
-??? `make` : Exécute la cible `default`. ???
+`make` : Exécute la cible `default`.
 
 `make lib` : Télécharge ou met à jour les fichiers `tcv.h` et `tcv.o`.
 
@@ -46,11 +46,17 @@ Maxime Ouellet (OUEM03019908)
 
 `tp1.c` : Contient le code source de mon travail pratique 1.
 
-`tp2.c` : Contient le code source de mon travail pratique 2.
+`tp2.c` : Contient la fonction main de mon travail pratique 2.
+
+`malib.h` : Fichier headers contenant les fonctions de ma librairie que j'utilise pour le travail pratique 2.
+
+`malib.c` : Fichier contenant le code source des fonctions de ma librairie que j'utilise pour le travail pratique 2.
 
 Répertoire `ressources` : Contient les images pour ce fichier et les fichiers contenant des transactions en entrée (Pour tester).
 
 `reflexion.md` : Démontre ma réflexion par rapport au développement de ce travail.
+
+`tp2.yml` : Workflow pour github.
 
 ## Processus de réflexion et démarche
 
@@ -64,7 +70,7 @@ http://cunit.sourceforge.net/example.html
 
 ## Statut
 
-Non complété. En cours.
+Complété.
 
 ## Autoévaluation
 
@@ -110,5 +116,5 @@ Le fichier README et reflexion sont de type markdown et bien structurés. 1.0/1.
 
 ### Bonus :
 
-GitHub action (YAML). /1.0
+GitHub action (YAML). 1.0/1.0
 
