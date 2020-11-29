@@ -55,7 +55,7 @@ int main (int argc, char *argv[]) {
 				transaction03(trans, past, version);
 				break;
 			case 4 :
-				transaction04();
+				transaction04(trans, past, version);
 				break;
 			case 5 :
 				echangeData(trans, past);

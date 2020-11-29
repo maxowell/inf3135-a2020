@@ -146,7 +146,7 @@ void transaction01 (char *_trans, pastille_s *_past) {
 void transaction02 (char *_trans, pastille_s *_past, version_t *_version) {
 	char copy[100];
 	strcpy(copy, _trans);
-	temp = getTemp(copy);
+	char *temp = getTemp(copy);
 	bool validerTA;
 	if (_version->build > 1004) {
 		validerTA = validerTA_1(atoi(getTemp(temp)));
@@ -171,7 +171,7 @@ void transaction03 (char *_trans, pastille_s *_past, version_t *_version) {
 	if (_version->build > 1004) {
 		validerPuls = validerPulsation_1(atoi(puls));
 	} else {
-		validerPuls = validerPulsation_3((short)atoi(temp));
+		validerPuls = validerPulsation_3((short)atoi(puls));
 	}
 	if (strcmp(puls, "ERREUR\n") != 0 && validerPuls) {
 		_past->sommePuls += (size_t) atoi(puls);
