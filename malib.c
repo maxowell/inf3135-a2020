@@ -183,7 +183,7 @@ void transaction03 (char *_trans, pastille_s *_past, version_t *_version) {
 	}
 }
 
-void transaction04 (char *_trans, pastille_s *_past, version_t *version) {
+void transaction04 (char *_trans, pastille_s *_past, version_t *_version) {
 	char copy[100];
 	strcpy(copy, _trans);
 	bool validerSignal;
