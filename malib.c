@@ -223,3 +223,13 @@ void getPastille (pastille_s *_past) {
 	_past->sizePN = 0;
 	_past->time = 0;
 }
+
+void getDecompte (decompte_s *_decompte) {
+	_decompte->nbTransInconnues = 0;
+	_decompte->nbTransDecroissantes = 0;
+	_decompte->nbTransTrans01 = 0;
+	_decompte->nbTransTrans02 = 0;
+	_decompte->nbTransTrans03 = 0;
+	_decompte->nbTransTrans04 = 0;
+	_decompte->nbTransTrans05 = 0;
+}

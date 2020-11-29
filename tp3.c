@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include "tcv.h"
 #include "malib.h"
-
 int main (int argc, char *argv[]) {
 	char trans[100];
 	char copy[100];
@@ -14,6 +13,9 @@ int main (int argc, char *argv[]) {
 	pastille_s *past = NULL;
 	past = malloc(sizeof(pastille_s));
 	getPastille(past);
+	decompte_s *decompte = NULL;
+	decompte = malloc(sizeof(decompte_s));
+	getDecompte(decompte);
 	while (fgets(trans, 100, stdin) != NULL) {
 		strcpy(copy, trans);
 		if (!checkTime(getTimestamp(copy), past)) continue;
@@ -44,5 +46,6 @@ int main (int argc, char *argv[]) {
 	transaction23(past);
 	free(version);
 	free(past);
+	free(decompte);
 	return 0;
 }

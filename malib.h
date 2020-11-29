@@ -25,6 +25,20 @@
 		size_t idPN[];
 	} pastille_s;
 
+	//Objet decompte
+	typedef struct decompte_t {
+		int nbTransInconnues;
+		int nbTransDecroissantes;
+		int nbTrans01;
+		int nbTrans02;
+		int nbTrans03;
+		int nbTrans04;
+		int nbTrans05;
+	} decompte_s;
+
+	//Initilise un objet decompte aux valeurs par defaut.
+	void getDecompte();
+
 	//Retourne le timestamp (size_t) d'une transaction.
 	size_t getTimestamp();
 
