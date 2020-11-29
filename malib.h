@@ -70,4 +70,16 @@
 	//Vérifie si le timestamp d'une transaction est inférieur au timestamp précédant.
 	bool checkTime();
 
+	//Effectue la transaction pour TH.
+	void transaction01();
+
+	//Effectue la transaction pour TA.
+	void transaction02();
+
+	//Effectue la transaction pour Pulsation.
+	void transaction03();
+
+	//Effecture la transaction pour signal.
+	void transaction04();
+
 #endif

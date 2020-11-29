@@ -6,7 +6,9 @@
 #include "tcv.h"
 #include "malib.h"
 
-int cmd () {}
+int cmd () {
+
+}
 
 bool checkTime (size_t time, pastille_s *_past) {
 	if (time < _past->time) {
@@ -124,6 +126,74 @@ void transaction21 (pastille_s *_past) {
 		printf("%ld\n", _past->sommePuls/_past->nombrePuls);
 	} else {
 		printf("%ld\n", _past->sommePuls);
+	}
+}
+
+void transaction01 (char *_trans, pastille_s *_past) {
+	char copy[100];
+	strcpy(copy, _trans);
+	char *temp = getTemp(copy);
+	if (strcmp(temp, "ERREUR\n") != 0 && validerTH_1(getTempShort(temp))) {
+		_past->sommeTH += (float) atof(temp);
+		_past->nombreTH++;
+	} else if (strcmp(temp, "ERREUR\n") == 0) {
+		_past->erreurTH++;
+	} else if (!validerTH_1(getTempShort(temp))) {
+		_past->invalideTH++;
+	}
+}
+
+void transaction02 (char *_trans, pastille_s *_past, version_t *_version) {
+	char copy[100];
+	strcpy(copy, _trans);
+	temp = getTemp(copy);
+	bool validerTA;
+	if (_version->build > 1004) {
+		validerTA = validerTA_1(atoi(getTemp(temp)));
+	} else {
+		validerTA = validerTA_3(getTempShort(temp));
+	}
+	if (strcmp(temp, "ERREUR\n") != 0 && validerTA) {
+		_past->sommeTA += (float) atof(temp);
+		_past->nombreTA++;
+	} else if (strcmp(temp, "ERREUR\n") == 0) {
+		_past->erreurTA++;
+	} else if (!validerTA) {
+		_past->invalideTA++;
+	}
+}
+
+void transaction03 (char *_trans, pastille_s *_past, version_t *_version) {
+	char copy[100];
+	strcpy(copy, _trans);
+	char *puls = getTemp(copy);
+	bool validerPuls;
+	if (_version->build > 1004) {
+		validerPuls = validerPulsation_1(atoi(puls));
+	} else {
+		validerPuls = validerPulsation_3((short)atoi(temp));
+	}
+	if (strcmp(puls, "ERREUR\n") != 0 && validerPuls) {
+		_past->sommePuls += (size_t) atoi(puls);
+		_past->nombrePuls++;
+	} else if (strcmp(puls, "ERREUR\n") == 0) {
+		_past->erreurPuls++;
+	} else if (!validerPuls) {
+		_past->invalidePuls++;
+	}
+}
+
+void transaction04 (char *_trans, pastille_s *_past, version_t *version) {
+	char copy[100];
+	strcpy(copy, _trans);
+	bool validerSignal;
+	if (_version->build > 1004) {
+		validerSignal = validerSignal_3(getSignal(copy));
+	} else {
+		validerSignal = validerSignal_2(getSignal(copy));
+	}
+	if (validerSignal) {
+		qualiteSignal(_trans, _past);
 	}
 }
 
