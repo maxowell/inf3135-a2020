@@ -74,47 +74,34 @@ Complété.
 
 ## Autoévaluation
 
-### Récupération :
+### Exigences :
 
-La récupération du projet est sans problème et le dépôt est privé. 1.0/1.0
-
-### Makefile :
-
-Le fichier Makefile offre tous les services demandés. 2.0/2.0
-
-### malib.h/c :
-
-Détection des inclusions multiples. 1.0/1.0
+/5.0
 
 ### Compilation :
 
-Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. 2.0/2.0
+Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. /2.0
+
+### Makefile :
+
+Le fichier Makefile offre tous les services demandés. /2.0
 
 ### Fonctionnabilité :
 
-Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. 8.0/8.0
+Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. /7.0
 
 ### Branche (git) :
 
-La branche est une branche de développement nommée tp2. 1.0/1.0
+La branche est une branche de développement nommée `tp3`. La branche `main` est vide. /1.0
 
 ### Issues (git) :
 
-Je suis intervenu au moins une fois et au plus deux fois. 1.0/1.0
+Je suis intervenu au moins une fois et au plus trois fois. /1.0
 
 ### Optimal (git) :
 
-1.0/1.0
-
-### Professionnel : 
-
-Le projet est simple, organisé et compréhensible. 2.0/2.0
-
-### Markdown :
-
-Le fichier README et reflexion sont de type markdown et bien structurés. 1.0/1.0
+/1.0
 
 ### Bonus :
 
-GitHub action (YAML). 1.0/1.0
-
+/1.0
