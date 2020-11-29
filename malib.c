@@ -1,10 +1,12 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 #include <stdbool.h>
 #include "tcv.h"
 #include "malib.h"
+
+int cmd () {}
 
 bool checkTime (size_t time, pastille_s *_past) {
 	if (time < _past->time) {

@@ -10,4 +10,4 @@ Je me suis construit une structure pour stocker les différentes informations qu
 
 À chaque traitement de transaction, le programme imprime directement les informations demandées sur le stdout. Ceci me permet de ne pas avoir à stocker ces informations pour la totalité du déroulement du programme (seulement pour la transaction en cours).
 
-N'ayant pas les connaissances nécessaires pour faire les fichiers `malib.c`, `malib.h` et `tp2.yml`, j'ai gardé ces objectifs pour la fin.
+N'ayant initialement pas les connaissances nécessaires pour faire les fichiers `malib.c`, `malib.h` et `tp2.yml`, j'ai gardé ces objectifs pour la fin.

@@ -1,6 +1,9 @@
 #ifndef _MALIB_H_
 #define _MALIB_H_
 
+	//Gere les arguments de la ligne de commande.
+	int cmd();
+
 	//Objet pastille.
 	typedef struct pastille_t{
 		size_t id;

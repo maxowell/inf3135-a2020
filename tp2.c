@@ -8,7 +8,11 @@ int main () {
 
 	char trans[100];
 	char copy[100];
-	printf("version #: 0.1.1005\n");
+
+	version_t *version = NULL;
+	version = malloc(sizeof(version_t));
+	getVersion(version);
+	printf("version #: %d.%d.%d\n", version->major, version->minor, version->build);
 
 	pastille_s *past = NULL;
 	past = malloc(sizeof(pastille_s));
@@ -56,30 +60,48 @@ int main () {
 			case 2 :
 				strcpy(copy, trans);
 				temp = getTemp(copy);
-				if (strcmp(temp, "ERREUR\n") != 0 && validerTA_3(getTempShort(temp))) {
+				bool validerTA;
+				if (version->build > 1004) {
+					validerTA = validerTA_1(atoi(getTemp(temp)));
+				} else {
+					validerTA = validerTA_3(getTempShort(temp));
+				}
+				if (strcmp(temp, "ERREUR\n") != 0 && validerTA) {
 					past->sommeTA += (float) atof(temp);
 					past->nombreTA++;
 				} else if (strcmp(temp, "ERREUR\n") == 0) {
 					past->erreurTA++;
-				} else if (!validerTA_3(getTempShort(temp))) {
+				} else if (!validerTA) {
 					past->invalideTA++;
 				}
 				break;
 			case 3 :
 				strcpy(copy, trans);
 				char *puls = getTemp(copy);
-				if (strcmp(puls, "ERREUR\n") != 0 && validerPulsation_1(atof(puls))) {
-					past->sommePuls += (size_t) atof(puls);
+				bool validerPuls;
+				if (version->build > 1004) {
+					validerPuls = validerPulsation_1(atoi(puls));
+				} else {
+					validerPuls = validerPulsation_3((short)atoi(temp));
+				}
+				if (strcmp(puls, "ERREUR\n") != 0 && validerPuls) {
+					past->sommePuls += (size_t) atoi(puls);
 					past->nombrePuls++;
 				} else if (strcmp(puls, "ERREUR\n") == 0) {
 					past->erreurPuls++;
-				} else if (!validerPulsation_3(getTempShort(puls))) {
+				} else if (!validerPuls) {
 					past->invalidePuls++;
 				}
 				break;
 			case 4 :
 				strcpy(copy, trans);
-				if (validerSignal_2(getSignal(copy))) {
+				bool validerSignal;
+				if (version->build > 1004) {
+					validerSignal = validerSignal_3(getSignal(copy));
+				} else {
+					validerSignal = validerSignal_2(getSignal(copy));
+				}
+				if (validerSignal) {
 					qualiteSignal(trans, past);
 				}
 				break;
@@ -91,6 +113,7 @@ int main () {
 	transaction21(past);
 	transaction22(past);
 	transaction23(past);
+	free(version);
 	free(past);
 	return 0;
 }

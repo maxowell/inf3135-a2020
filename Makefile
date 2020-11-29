@@ -1,4 +1,4 @@
-default: tp2
+default: tp3
 
 tp1:	tcv.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 -I/usr/include/CUnit -L/usr/lib/x86_64-linux-gnu tp1.c -o tp1 tcv.o -lcunit
@@ -6,8 +6,11 @@ tp1:	tcv.o
 tp2:	malib.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -o tp2 tcv.o malib.o -lm
 
+tp3:	tp2
+	gcc -Wall -Werror=vla -pedantic -std=c11 tp3.c -o tp3 tcv.o malib.o -lm
+
 clean:
-	rm -f tp1 tcv.o tcv.h tp2 malib.o
+	rm -f tp1 tcv.o tcv.h tp2 malib.o tp3
 
 lib:
 	mkdir data

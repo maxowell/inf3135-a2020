@@ -14,7 +14,7 @@ Maxime Ouellet (OUEM03019908)
 
 ### En utilisant le fichier Makefile :
 
-??? `make` : Exécute la cible `default`. ???
+`make` : Exécute la cible `default`.
 
 `make lib` : Télécharge ou met à jour les fichiers `tcv.h` et `tcv.o`.
 
@@ -46,11 +46,17 @@ Maxime Ouellet (OUEM03019908)
 
 `tp1.c` : Contient le code source de mon travail pratique 1.
 
-`tp2.c` : Contient le code source de mon travail pratique 2.
+`tp2.c` : Contient la fonction main de mon travail pratique 2.
+
+`malib.h` : Fichier headers contenant les fonctions de ma librairie que j'utilise pour le travail pratique 2.
+
+`malib.c` : Fichier contenant le code source des fonctions de ma librairie que j'utilise pour le travail pratique 2.
 
 Répertoire `ressources` : Contient les images pour ce fichier et les fichiers contenant des transactions en entrée (Pour tester).
 
 `reflexion.md` : Démontre ma réflexion par rapport au développement de ce travail.
+
+`tp2.yml` : Workflow pour github.
 
 ## Processus de réflexion et démarche
 
@@ -64,51 +70,38 @@ http://cunit.sourceforge.net/example.html
 
 ## Statut
 
-Non complété. En cours.
+Complété.
 
 ## Autoévaluation
 
-### Récupération :
+### Exigences :
 
-La récupération du projet est sans problème et le dépôt est privé. 1.0/1.0
-
-### Makefile :
-
-Le fichier Makefile offre tous les services demandés. 2.0/2.0
-
-### malib.h/c :
-
-Détection des inclusions multiples. 1.0/1.0
+/5.0
 
 ### Compilation :
 
-Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. 2.0/2.0
+Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. /2.0
+
+### Makefile :
+
+Le fichier Makefile offre tous les services demandés. /2.0
 
 ### Fonctionnabilité :
 
-Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. 8.0/8.0
+Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. /7.0
 
 ### Branche (git) :
 
-La branche est une branche de développement nommée tp2. 1.0/1.0
+La branche est une branche de développement nommée `tp3`. La branche `main` est vide. /1.0
 
 ### Issues (git) :
 
-Je suis intervenu au moins une fois et au plus deux fois. 1.0/1.0
+Je suis intervenu au moins une fois et au plus trois fois. /1.0
 
 ### Optimal (git) :
 
-1.0/1.0
-
-### Professionnel : 
-
-Le projet est simple, organisé et compréhensible. 2.0/2.0
-
-### Markdown :
-
-Le fichier README et reflexion sont de type markdown et bien structurés. 1.0/1.0
+/1.0
 
 ### Bonus :
 
-GitHub action (YAML). /1.0
-
+/1.0
