@@ -6,6 +6,8 @@
 #include "tcv.h"
 #include "malib.h"
 
+int cmd () {}
+
 bool checkTime (size_t time, pastille_s *_past) {
 	if (time < _past->time) {
 		return false;
