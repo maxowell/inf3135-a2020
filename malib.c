@@ -204,3 +204,22 @@ void transaction22 (pastille_s *_past) {
 void transaction23(pastille_s *_past) {
 	printf("23 %ld %ld %ld\n", _past->erreurTH/3, _past->erreurTA/3, _past->erreurPuls/3);
 }
+
+void getPastille (pastille_s *_past) {
+	_past->id = 9999;
+	_past->p = 2;
+	_past->sommeTH = 0;
+	_past->nombreTH = 0;
+	_past->erreurTH = 0;
+	_past->invalideTH = 0;
+	_past->sommeTA = 0;
+	_past->nombreTA = 0;
+	_past->erreurTA = 0;
+	_past->invalideTA = 0;
+	_past->sommePuls = 0;
+	_past->nombrePuls = 0;
+	_past->erreurPuls = 0;
+	_past->invalidePuls = 0;
+	_past->sizePN = 0;
+	_past->time = 0;
+}

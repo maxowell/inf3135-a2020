@@ -82,4 +82,7 @@
 	//Effecture la transaction pour signal.
 	void transaction04();
 
+	//Initialise une pastille aux valeurs par defaut.
+	void getPastille();
+
 #endif
