@@ -46,7 +46,7 @@ Maxime Ouellet (OUEM03019908)
 
 `tp1.c` : Contient le code source de mon travail pratique 1.
 
-`tp2.c` : Contient la fonction main de mon travail pratique 2.
+`tp3.c` : Contient la fonction main de mon travail pratique 3.
 
 `malib.h` : Fichier headers contenant les fonctions de ma librairie que j'utilise pour le travail pratique 2.
 
