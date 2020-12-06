@@ -11,9 +11,7 @@ int cmd () {
 }
 
 bool checkTime (size_t time, pastille_s *_past) {
-	if (time < _past->time) {
-		return false;
-	}
+	if (time < _past->time) return false;
 	_past->time = time;
 	return true;
 }
@@ -21,75 +19,37 @@ bool checkTime (size_t time, pastille_s *_past) {
 void changeID (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
-	printf("10 %ld ", getTimestamp(copy));
+	printf("10 %ld ", atoi(getInfo(copy,1)));
 	strcpy(copy, _trans);
-	_past->id = getId(copy, 1);
+	_past->id = atoi(getInfo(copy,3));
 	printf("%ld ", _past->id);
 	strcpy(copy, _trans);
-	_past->p = getPuissance(copy);
+	_past->p = (unsigned char) atoi(getInfo(copy,4));
 	printf("%d\n", _past->p);
 }
 
 void qualiteSignal (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
-	printf("14 %ld ", getTimestamp(copy));
+	printf("14 %ld ", atoi(getInfo(copy,1)));
 	strcpy(copy, _trans);
-	size_t newId = getId(copy, 0);
+	size_t newId = atoi(getInfo(copy, 4));
 	_past->idPN[_past->sizePN] = newId;
 	_past->sizePN++;
 	printf("%ld ", newId);
 	strcpy(copy, _trans);
-	signed short signal = getSignal(copy);
+	signed short signal = atoi(getInfo(copy,3));
 	printf("%.1f\n", getDistance(signal, _past->p));
 }
 
 void echangeData (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
-	printf("15 %ld ", getTimestamp(copy));
+	printf("15 %ld ", atoi(getInfo(copy,1)));
 	strcpy(copy, _trans);
 	printf("%ld ", _past->id);
-	for (int i = 0; i < _past->sizePN; i++) {
-		printf("%ld ", _past->idPN[i]);
-	}
+	for (int i = 0; i < _past->sizePN; i++) printf("%ld ", _past->idPN[i]);
 	printf("\n");
-}
-
-size_t getTimestamp (char *_trans) {
-	char *elem = strtok((char *)_trans, " ");
-	return atoi(elem);
-}
-
-int getNumTrans(char *_trans) {
-	char *elem = strtok((char *)_trans, " ");
-	elem = strtok(NULL, " ");
-	return atoi(elem);
-}
-
-size_t getId (char *_trans, int *_v) {
-	char *elem = strtok((char *)_trans, " ");
-	elem = strtok(NULL, " ");
-	elem = strtok(NULL, " ");
-	if (_v == 0) {
-		elem = strtok(NULL, " ");
-	}
-	return atoi(elem);
-}
-
-unsigned char getPuissance (char *_trans) {
-	char *elem = strtok((char *)_trans, " ");
-	elem = strtok(NULL, " ");
-	elem = strtok(NULL, " ");
-	elem = strtok(NULL, " ");
-	return (unsigned char) atoi(elem);
-}
-
-signed short getSignal (char *_trans) {
-	char *elem = strtok((char *)_trans, " ");
-	elem = strtok(NULL, " ");
-	elem = strtok(NULL, " ");
-	return (signed short) atoi(elem);
 }
 
 float getDistance (signed short *_signal, unsigned char *_p) {
@@ -97,26 +57,6 @@ float getDistance (signed short *_signal, unsigned char *_p) {
 	float n = (float) (10 * (size_t) _p);
 	float distance = (float) pow(10, m/n);
 	return distance;
-}
-
-char* getTemp (char *_trans) {
-	char *elem = strtok((char *)_trans, " ");
-	elem = strtok(NULL, " ");
-	elem = strtok(NULL, " ");
-	return elem;
-}
-
-char* getInfo (char *_trans, int _i) {
-	char *elem = strtok((char *)_trans, " ");
-	for (int j = 1; j < _i; j++) {
-		elem = strtok(NULL, " ");
-	}
-	return elem;
-}
-
-signed short getTempShort (char *_temp) {
-	return (signed short)((float) atof(_temp) * 10);
-}
 
 void transaction21 (pastille_s *_past) {
 	printf("21 ");
@@ -140,13 +80,13 @@ void transaction21 (pastille_s *_past) {
 void transaction01 (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
-	char *temp = getTemp(copy);
-	if (strcmp(temp, "ERREUR\n") != 0 && validerTH_1(getTempShort(temp))) {
+	char *temp = getInfo(copy,3);
+	if (strcmp(temp, "ERREUR\n") != 0 && validerTH_1((signed short)((float) atof(temp) * 10))) {
 		_past->sommeTH += (float) atof(temp);
 		_past->nombreTH++;
 	} else if (strcmp(temp, "ERREUR\n") == 0) {
 		_past->erreurTH++;
-	} else if (!validerTH_1(getTempShort(temp))) {
+	} else if (!validerTH_1((signed short)((float) atof(temp) * 10))) {
 		_past->invalideTH++;
 	}
 }
@@ -154,12 +94,12 @@ void transaction01 (char *_trans, pastille_s *_past) {
 void transaction02 (char *_trans, pastille_s *_past, version_t *_version) {
 	char copy[100];
 	strcpy(copy, _trans);
-	char *temp = getTemp(copy);
+	char *temp = getInfo(copy,3);
 	bool validerTA;
 	if (_version->build > 1004) {
-		validerTA = validerTA_1(atoi(getTemp(temp)));
+		validerTA = validerTA_1(atoi(temp));
 	} else {
-		validerTA = validerTA_3(getTempShort(temp));
+		validerTA = validerTA_3((signed short)((float) atof(temp) * 10));
 	}
 	if (strcmp(temp, "ERREUR\n") != 0 && validerTA) {
 		_past->sommeTA += (float) atof(temp);
@@ -174,7 +114,7 @@ void transaction02 (char *_trans, pastille_s *_past, version_t *_version) {
 void transaction03 (char *_trans, pastille_s *_past, version_t *_version) {
 	char copy[100];
 	strcpy(copy, _trans);
-	char *puls = getTemp(copy);
+	char *puls = getInfo(copy,3);
 	bool validerPuls;
 	if (_version->build > 1004) {
 		validerPuls = validerPulsation_1(atoi(puls));
@@ -196,9 +136,9 @@ void transaction04 (char *_trans, pastille_s *_past, version_t *_version) {
 	strcpy(copy, _trans);
 	bool validerSignal;
 	if (_version->build > 1004) {
-		validerSignal = validerSignal_3(getSignal(copy));
+		validerSignal = validerSignal_3(atoi(getInfo(copy,3)));
 	} else {
-		validerSignal = validerSignal_2(getSignal(copy));
+		validerSignal = validerSignal_2(atoi(getInfo(copy,3)));
 	}
 	if (validerSignal) {
 		qualiteSignal(_trans, _past);

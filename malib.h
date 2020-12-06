@@ -39,18 +39,6 @@
 	//Initilise un objet decompte aux valeurs par defaut.
 	void getDecompte();
 
-	//Retourne le timestamp (size_t) d'une transaction.
-	size_t getTimestamp();
-
-	//Retourne le numéro (int) d'une transaction.
-	int getNumTrans();
-
-	//Retourne l'id (size_t) d'une transaction. Position 3 si v != 0, 4 si v == 0.
-	size_t getId();
-
-	//Retourne la puissance de l'émetteur d'une transaction.
-	unsigned char getPuissance();
-
 	//Changement de l'identifiant par défaut.
 	void changeID();
 
@@ -63,17 +51,8 @@
 	//Échange de données.
 	void echangeData();
 
-	//Retourne le signal RSSI d'une transaction.
-	signed short getSignal();
-
 	//Calcule la distance en mètres
 	float getDistance();
-
-	//Retourne la température d'une transaction
-	char* getTemp();
-
-	//Retourne une température sous forme signed short
-	signed short getTempShort();
 
 	//Effectue la transaction pour la moyenne des TH TA pulsations.
 	void transaction21();

@@ -18,9 +18,9 @@ int main (int argc, char *argv[]) {
 	getDecompte(decompte);
 	while (fgets(trans, 100, stdin) != NULL) {
 		strcpy(copy, trans);
-		if (!checkTime(getTimestamp(copy), past)) continue;
+		if (!checkTime(atoi(getInfo(copy,1)), past)) continue;
 		strcpy(copy,trans);
-		switch (getNumTrans(copy)) {
+		switch (atoi(getInfo(copy,2))) {
 			case 0 :
 				changeID(trans, past);
 				break;
