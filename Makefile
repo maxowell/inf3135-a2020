@@ -6,7 +6,7 @@ tp1:	tcv.o
 tp2:	malib.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -o tp2 tcv.o malib.o -lm
 
-tp3:	tp2
+tp3:	malib.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 tp3.c -o tp3 tcv.o malib.o -lm
 
 clean:

@@ -10,6 +10,12 @@ int cmd () {
 
 }
 
+char* getInfo (char *_trans, int _i) {
+	char *elem = strtok((char *)_trans, " ");
+	for (int j = 1; j < _i; j++) elem = strtok(NULL, " ");
+	return elem;
+}
+
 bool checkTime (size_t time, pastille_s *_past) {
 	if (time < _past->time) return false;
 	_past->time = time;
@@ -19,7 +25,7 @@ bool checkTime (size_t time, pastille_s *_past) {
 void changeID (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
-	printf("10 %ld ", atoi(getInfo(copy,1)));
+	printf("10 %ld ", atol(getInfo(copy,1)));
 	strcpy(copy, _trans);
 	_past->id = atoi(getInfo(copy,3));
 	printf("%ld ", _past->id);
@@ -31,7 +37,7 @@ void changeID (char *_trans, pastille_s *_past) {
 void qualiteSignal (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
-	printf("14 %ld ", atoi(getInfo(copy,1)));
+	printf("14 %ld ", atol(getInfo(copy,1)));
 	strcpy(copy, _trans);
 	size_t newId = atoi(getInfo(copy, 4));
 	_past->idPN[_past->sizePN] = newId;
@@ -45,7 +51,7 @@ void qualiteSignal (char *_trans, pastille_s *_past) {
 void echangeData (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
-	printf("15 %ld ", atoi(getInfo(copy,1)));
+	printf("15 %ld ", atol(getInfo(copy,1)));
 	strcpy(copy, _trans);
 	printf("%ld ", _past->id);
 	for (int i = 0; i < _past->sizePN; i++) printf("%ld ", _past->idPN[i]);
@@ -57,6 +63,7 @@ float getDistance (signed short *_signal, unsigned char *_p) {
 	float n = (float) (10 * (size_t) _p);
 	float distance = (float) pow(10, m/n);
 	return distance;
+}
 
 void transaction21 (pastille_s *_past) {
 	printf("21 ");
