@@ -106,6 +106,14 @@ char* getTemp (char *_trans) {
 	return elem;
 }
 
+char* getInfo (char *_trans, int _i) {
+	char *elem = strtok((char *)_trans, " ");
+	for (int j = 1; j < _i; j++) {
+		elem = strtok(NULL, " ");
+	}
+	return elem;
+}
+
 signed short getTempShort (char *_temp) {
 	return (signed short)((float) atof(_temp) * 10);
 }

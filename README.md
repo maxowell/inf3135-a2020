@@ -52,6 +52,14 @@ Maxime Ouellet (OUEM03019908)
 
 `malib.c` : Fichier contenant le code source des fonctions de ma librairie que j'utilise pour le travail pratique 2.
 
+`outil3.h` :
+
+`outil3.c` :
+
+`test-c.yml` : Fichier de test de compilation.
+
+`test-f.yml` : Fichier de test fonctionnel.
+
 Répertoire `ressources` : Contient les images pour ce fichier et les fichiers contenant des transactions en entrée (Pour tester).
 
 `reflexion.md` : Démontre ma réflexion par rapport au développement de ce travail.
@@ -70,21 +78,33 @@ http://cunit.sourceforge.net/example.html
 
 ## Statut
 
-Complété.
+Non-complété. En cours.
 
 ## Autoévaluation
 
 ### Exigences :
 
-/5.0
+outil3.c, malib.c ... /4.0
 
 ### Compilation :
 
-Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. /2.0
+Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. /1.0
 
 ### Makefile :
 
-Le fichier Makefile offre tous les services demandés. /2.0
+Le fichier Makefile offre tous les services demandés. /1.0
+
+### test-c.yml :
+
+Produire le résultat dans compilation.md + badge /1.0
+
+### test-f.yml :
+
+Produire le résultat dans fonctionnel.md + badge /1.0
+
+### badges yaml :
+
+Mettre les deux badges dans README.md /2.0
 
 ### Fonctionnabilité :
 
@@ -94,14 +114,14 @@ Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restri
 
 La branche est une branche de développement nommée `tp3`. La branche `main` est vide. /1.0
 
-### Issues (git) :
-
-Je suis intervenu au moins une fois et au plus trois fois. /1.0
-
 ### Optimal (git) :
 
-/1.0
+On vise un dépôt pafait. /1.0
+
+### Performance :
+
+Les performances sont bonnes. /1.0
 
 ### Bonus :
 
-/1.0
+Les performances sont optimales. /1.0

@@ -57,6 +57,9 @@
 	//Qualité du signal en mètres.
 	void qualiteSignal();
 
+	//Retourne une information contenue dans la transaction.
+	char* getInfo();
+
 	//Échange de données.
 	void echangeData();
 
