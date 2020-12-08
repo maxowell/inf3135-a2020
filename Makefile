@@ -13,10 +13,10 @@ clean:
 	rm -f tp1 tcv.o tcv.h tp2 malib.o tp3
 
 lib:
-	mkdir data
-	curl -LJ -o data/tp1.zip https://github.com/guyfrancoeur/INF3135_A2020/raw/master/tp/tp1.zip
+	curl -LJ -o data/tp1.zip --create-dirs https://github.com/guyfrancoeur/INF3135_A2020/raw/master/tp/tp1.zip
 	unzip -o data/tp1.zip -d ./
-	rm -rf data
+	find data/* -delete
+	rmdir data
 
 test-tp1a:	tp1
 	./tp1
