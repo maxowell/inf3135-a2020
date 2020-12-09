@@ -7,10 +7,10 @@ tp2:	malib.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -o tp2 tcv.o malib.o -lm
 
 tp3:	malib.o
-	gcc -Wall -Werror=vla -pedantic -std=c11 tp3.c -o tp3 tcv.o malib.o -lm
+	gcc -Wall -Werror=vla -pedantic -std=c11 tp3.c -o tp3 tcv.o malib.o -lm outil3.o -lm
 
 clean:
-	rm -f tp1 tcv.o tcv.h tp2 malib.o tp3
+	rm -f tp1 tcv.o tcv.h tp2 malib.o outil3.o tp3
 
 lib:
 	curl -LJ -o data/tp1.zip --create-dirs https://github.com/guyfrancoeur/INF3135_A2020/raw/master/tp/tp1.zip
@@ -30,5 +30,8 @@ test-tp2:	tp2
 tcv.o:
 	make lib
 
-malib.o: tcv.o
-	gcc -Wall -Werror=vla -pedantic -std=c11  -c malib.c -o malib.o
+malib.o: outil3.o
+	gcc -Wall -Werror=vla -pedantic -std=c11 -c malib.c -o malib.o
+
+outil3.o: tcv.o
+	gcc -Wall -Werror=vla -pedantic -std=c11 -c outil3.c -o outil3.o
