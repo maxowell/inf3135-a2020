@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "tcv.h"
 #include "malib.h"
+#include "outil3.h"
 int main (int argc, char *argv[]) {
 	cmd(argc, argv);
 	char trans[100];
@@ -40,7 +41,7 @@ int main (int argc, char *argv[]) {
 			default :
 				past->nbTransInconnues++;
 				break;
-		}
+		}	
 	}
 	if (!paramT) transaction21(past);
 	if (!paramT) transaction22(past);
