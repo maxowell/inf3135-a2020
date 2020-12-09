@@ -48,7 +48,7 @@ int main (int argc, char *argv[]) {
 	if (!paramT) transaction21(past);
 	if (!paramT) transaction22(past);
 	if (!paramT) transaction23(past);
-	if (paramI) printf("information invalide\n  trx non reconnue : %d\n  trx avec ts non sequentiel : %d", past->nonReconnue, past->badTime);
+	if (paramI) printf("information invalide\n  trx non reconnue : %d\n  trx avec ts non sequentiel : %d\n", past->nonReconnue, past->badTime);
 	free(version);
 	free(past);
 	free(decompte);
