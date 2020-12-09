@@ -5,8 +5,6 @@
 #include "malib.h"
 int main (int argc, char *argv[]) {
 	cmd(argc, argv);
-	printf("d : %d\ni : %d\ns : %d\nt : %d\n", paramD, paramI, paramS, paramT);
-	return 0;
 	char trans[100];
 	char copy[100];
 	version_t *version = NULL;
@@ -26,7 +24,6 @@ int main (int argc, char *argv[]) {
 		switch (atoi(getInfo(copy,2))) {
 			case 0 :
 				changeID(trans, past);
-			
 				break;
 			case 1 :
 				transaction01(trans, past);
@@ -43,11 +40,15 @@ int main (int argc, char *argv[]) {
 			case 5 :
 				echangeData(trans, past);
 				break;
+			default :
+				past->nonReconnue++;
+				break;
 		}
 	}
-	transaction21(past);
-	transaction22(past);
-	transaction23(past);
+	if (!paramT) transaction21(past);
+	if (!paramT) transaction22(past);
+	if (!paramT) transaction23(past);
+	if (paramI) printf("information invalide\n  trx non reconnue : %d\n  trx avec ts non sequentiel : %d", past->nonReconnue, past->badTime);
 	free(version);
 	free(past);
 	free(decompte);

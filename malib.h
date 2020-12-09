@@ -27,6 +27,8 @@
 		int invalidePuls;
 		int sizePN;
 		size_t time;
+		int badTime;
+		int nonReconnue;
 		size_t idPN[];
 	} pastille_s;
 

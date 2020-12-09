@@ -11,12 +11,12 @@ bool paramD = false;
 bool paramS = false;
 bool paramI = false;
 
-int cmd (int argc, char *argv[]) {
-	for (int i = 0; i < argc; i++) {
-		if (strcmp(argv[i], "-s") == 0) paramS = true;
-		else if (strcmp(argv[i], "-d") == 0) paramD = true;
-		else if (strcmp(argv[i], "-t") == 0) paramT = true;
-		else if (strcmp(argv[i], "-i") == 0) paramI = true;
+int cmd (int _argc, char *_argv[]) {
+	for (int i = 0; i < _argc; i++) {
+		if (strcmp(_argv[i], "-s") == 0) paramS = true;
+		else if (strcmp(_argv[i], "-d") == 0) paramD = true;
+		else if (strcmp(_argv[i], "-t") == 0) paramT = true;
+		else if (strcmp(_argv[i], "-i") == 0) paramI = true;
 	}
 	return 0;
 }
@@ -28,7 +28,10 @@ char* getInfo (char *_trans, int _i) {
 }
 
 bool checkTime (size_t time, pastille_s *_past) {
-	if (time < _past->time) return false;
+	if (time < _past->time) {
+		_past->badTime++;
+		return false;
+	}
 	_past->time = time;
 	return true;
 }
@@ -36,37 +39,39 @@ bool checkTime (size_t time, pastille_s *_past) {
 void changeID (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
-	printf("10 %ld ", atol(getInfo(copy,1)));
+	if (!paramT) printf("10 %ld ", atol(getInfo(copy,1)));
 	strcpy(copy, _trans);
 	_past->id = atoi(getInfo(copy,3));
-	printf("%ld ", _past->id);
+	if (!paramT) printf("%ld ", _past->id);
 	strcpy(copy, _trans);
 	_past->p = (unsigned char) atoi(getInfo(copy,4));
-	printf("%d\n", _past->p);
+	if (!paramT) printf("%d\n", _past->p);
 }
 
 void qualiteSignal (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
-	printf("14 %ld ", atol(getInfo(copy,1)));
+	if (!paramT) printf("14 %ld ", atol(getInfo(copy,1)));
 	strcpy(copy, _trans);
 	size_t newId = atoi(getInfo(copy, 4));
 	_past->idPN[_past->sizePN] = newId;
 	_past->sizePN++;
-	printf("%ld ", newId);
+	if (!paramT) printf("%ld ", newId);
 	strcpy(copy, _trans);
 	signed short signal = atoi(getInfo(copy,3));
-	printf("%.1f\n", getDistance(signal, _past->p));
+	if (!paramT) printf("%.1f\n", getDistance(signal, _past->p));
 }
 
 void echangeData (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
-	printf("15 %ld ", atol(getInfo(copy,1)));
+	if (!paramT) printf("15 %ld ", atol(getInfo(copy,1)));
 	strcpy(copy, _trans);
-	printf("%ld ", _past->id);
-	for (int i = 0; i < _past->sizePN; i++) printf("%ld ", _past->idPN[i]);
-	printf("\n");
+	if (!paramT) {
+		printf("%ld ", _past->id);
+		for (int i = 0; i < _past->sizePN; i++) printf("%ld ", _past->idPN[i]);
+		printf("\n");
+	}
 }
 
 float getDistance (signed short *_signal, unsigned char *_p) {
@@ -188,6 +193,8 @@ void getPastille (pastille_s *_past) {
 	_past->invalidePuls = 0;
 	_past->sizePN = 0;
 	_past->time = 0;
+	_past->badTime = 0;
+	_past->nonReconnue = 0;
 }
 
 void getDecompte (decompte_s *_decompte) {
