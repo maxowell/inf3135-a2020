@@ -6,8 +6,16 @@
 #include "tcv.h"
 #include "malib.h"
 
-int cmd () {
+bool paramT;
+bool paramd;
+bool paramS;
+bool paramI;
 
+int cmd (int argc, char *argv[]) {
+	for (int i = 0; i < argc; i++) {
+		printf(argv[i]);
+		printf("\n");
+	}
 }
 
 char* getInfo (char *_trans, int _i) {

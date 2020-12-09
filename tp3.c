@@ -4,6 +4,8 @@
 #include "tcv.h"
 #include "malib.h"
 int main (int argc, char *argv[]) {
+	cmd(argc, argv);
+	return 0;
 	char trans[100];
 	char copy[100];
 	version_t *version = NULL;
@@ -23,6 +25,7 @@ int main (int argc, char *argv[]) {
 		switch (atoi(getInfo(copy,2))) {
 			case 0 :
 				changeID(trans, past);
+			
 				break;
 			case 1 :
 				transaction01(trans, past);
