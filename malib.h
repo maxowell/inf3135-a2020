@@ -1,6 +1,7 @@
 #ifndef _MALIB_H_
 #define _MALIB_H_
 
+	//Booleans representants les arguments par ligne de commande
 	bool paramD;
 	bool paramI;
 	bool paramS;
@@ -27,13 +28,6 @@
 		int invalidePuls;
 		int sizePN;
 		size_t time;
-		int badTime;
-		int nonReconnue;
-		size_t idPN[];
-	} pastille_s;
-
-	//Objet decompte
-	typedef struct decompte_t {
 		int nbTransInconnues;
 		int nbTransDecroissantes;
 		int nbTrans01;
@@ -41,10 +35,8 @@
 		int nbTrans03;
 		int nbTrans04;
 		int nbTrans05;
-	} decompte_s;
-
-	//Initilise un objet decompte aux valeurs par defaut.
-	void getDecompte();
+		size_t idPN[];
+	} pastille_s;
 
 	//Changement de l'identifiant par défaut.
 	void changeID();

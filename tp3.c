@@ -14,9 +14,6 @@ int main (int argc, char *argv[]) {
 	pastille_s *past = NULL;
 	past = malloc(sizeof(pastille_s));
 	getPastille(past);
-	decompte_s *decompte = NULL;
-	decompte = malloc(sizeof(decompte_s));
-	getDecompte(decompte);
 	while (fgets(trans, 100, stdin) != NULL) {
 		strcpy(copy, trans);
 		if (!checkTime(atoi(getInfo(copy,1)), past)) continue;
@@ -41,16 +38,15 @@ int main (int argc, char *argv[]) {
 				echangeData(trans, past);
 				break;
 			default :
-				past->nonReconnue++;
+				past->nbTransInconnues++;
 				break;
 		}
 	}
 	if (!paramT) transaction21(past);
 	if (!paramT) transaction22(past);
 	if (!paramT) transaction23(past);
-	if (paramI) printf("information invalide\n  trx non reconnue : %d\n  trx avec ts non sequentiel : %d", past->nonReconnue, past->badTime);
+	if (paramI) printf("information invalide\n  trx non reconnue : %d\n  trx avec ts non sequentiel : %d", past->nbTransInconnues, past->nbTransDecroissantes);
 	free(version);
 	free(past);
-	free(decompte);
 	return 0;
 }

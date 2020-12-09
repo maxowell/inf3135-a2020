@@ -193,16 +193,11 @@ void getPastille (pastille_s *_past) {
 	_past->invalidePuls = 0;
 	_past->sizePN = 0;
 	_past->time = 0;
-	_past->badTime = 0;
-	_past->nonReconnue = 0;
-}
-
-void getDecompte (decompte_s *_decompte) {
-	_decompte->nbTransInconnues = 0;
-	_decompte->nbTransDecroissantes = 0;
-	_decompte->nbTrans01 = 0;
-	_decompte->nbTrans02 = 0;
-	_decompte->nbTrans03 = 0;
-	_decompte->nbTrans04 = 0;
-	_decompte->nbTrans05 = 0;
+	_past->nbTransInconnues = 0;
+	_past->nbTransDecroissantes = 0;
+	_past->nbTrans01 = 0;
+	_past->nbTrans02 = 0;
+	_past->nbTrans03 = 0;
+	_past->nbTrans04 = 0;
+	_past->nbTrans05 = 0;
 }
