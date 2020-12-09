@@ -29,7 +29,7 @@ char* getInfo (char *_trans, int _i) {
 
 bool checkTime (size_t time, pastille_s *_past) {
 	if (time < _past->time) {
-		_past->badTime++;
+		_past->nbTransDecroissantes++;
 		return false;
 	}
 	_past->time = time;
@@ -72,6 +72,7 @@ void echangeData (char *_trans, pastille_s *_past) {
 		for (int i = 0; i < _past->sizePN; i++) printf("%ld ", _past->idPN[i]);
 		printf("\n");
 	}
+	_past->nbTrans05++;
 }
 
 float getDistance (signed short *_signal, unsigned char *_p) {
@@ -112,6 +113,7 @@ void transaction01 (char *_trans, pastille_s *_past) {
 	} else if (!validerTH_1((signed short)((float) atof(temp) * 10))) {
 		_past->invalideTH++;
 	}
+	_past->nbTrans01++;
 }
 
 void transaction02 (char *_trans, pastille_s *_past, version_t *_version) {
@@ -132,6 +134,7 @@ void transaction02 (char *_trans, pastille_s *_past, version_t *_version) {
 	} else if (!validerTA) {
 		_past->invalideTA++;
 	}
+	_past->nbTrans02++;
 }
 
 void transaction03 (char *_trans, pastille_s *_past, version_t *_version) {
@@ -152,6 +155,7 @@ void transaction03 (char *_trans, pastille_s *_past, version_t *_version) {
 	} else if (!validerPuls) {
 		_past->invalidePuls++;
 	}
+	_past->nbTrans03++;
 }
 
 void transaction04 (char *_trans, pastille_s *_past, version_t *_version) {
@@ -166,6 +170,7 @@ void transaction04 (char *_trans, pastille_s *_past, version_t *_version) {
 	if (validerSignal) {
 		qualiteSignal(_trans, _past);
 	}
+	_past->nbTrans04++;
 }
 
 void transaction22 (pastille_s *_past) {

@@ -45,7 +45,9 @@ int main (int argc, char *argv[]) {
 	if (!paramT) transaction21(past);
 	if (!paramT) transaction22(past);
 	if (!paramT) transaction23(past);
-	if (paramI) printf("information invalide\n  trx non reconnue : %d\n  trx avec ts non sequentiel : %d", past->nbTransInconnues, past->nbTransDecroissantes);
+	if (paramI) printf("information invalide\n  trx non reconnue : %d\n  trx avec ts non sequentiel : %d\n", past->nbTransInconnues, past->nbTransDecroissantes);
+	if (paramD) printf("information detaillee\n  trx 01 : %d\n  trx 02 : %d\n  trx 03 : %d\n  trx 04 : %d\n  trx 05 : %d\n  le dernier ts lu : %ld\n", past->nbTrans01, past->nbTrans02, past->nbTrans03, past->nbTrans04, past->nbTrans05, past->time);
+	if (paramS) printf("information sommaire\n  nbr trx valides : %d\n  nbr trx (total) : %d\n", past->nbTrans01 + past->nbTrans02 + past->nbTrans03 + past->nbTrans04 + past->nbTrans05, past->nbTrans01 + past->nbTrans02 + past->nbTrans03 + past->nbTrans04 + past->nbTrans05 + past->nbTransDecroissantes + past->nbTransInconnues);
 	free(version);
 	free(past);
 	return 0;
