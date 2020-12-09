@@ -1,6 +1,11 @@
 #ifndef _MALIB_H_
 #define _MALIB_H_
 
+	bool paramD;
+	bool paramI;
+	bool paramS;
+	bool paramT;
+
 	//Gere les arguments de la ligne de commande.
 	int cmd();
 

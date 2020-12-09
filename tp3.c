@@ -5,6 +5,7 @@
 #include "malib.h"
 int main (int argc, char *argv[]) {
 	cmd(argc, argv);
+	printf("d : %d\ni : %d\ns : %d\nt : %d\n", paramD, paramI, paramS, paramT);
 	return 0;
 	char trans[100];
 	char copy[100];

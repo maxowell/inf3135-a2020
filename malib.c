@@ -6,16 +6,19 @@
 #include "tcv.h"
 #include "malib.h"
 
-bool paramT;
-bool paramd;
-bool paramS;
-bool paramI;
+bool paramT = false;
+bool paramD = false;
+bool paramS = false;
+bool paramI = false;
 
 int cmd (int argc, char *argv[]) {
 	for (int i = 0; i < argc; i++) {
-		printf(argv[i]);
-		printf("\n");
+		if (strcmp(argv[i], "-s") == 0) paramS = true;
+		else if (strcmp(argv[i], "-d") == 0) paramD = true;
+		else if (strcmp(argv[i], "-t") == 0) paramT = true;
+		else if (strcmp(argv[i], "-i") == 0) paramI = true;
 	}
+	return 0;
 }
 
 char* getInfo (char *_trans, int _i) {
