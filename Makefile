@@ -13,8 +13,8 @@ clean:
 	rm -f tp1 tcv.o tcv.h tp2 malib.o outil3.o tp3
 
 lib:
-	curl -LJ -o data/tp1.zip --create-dirs https://github.com/guyfrancoeur/INF3135_A2020/raw/master/tp/tp1.zip
-	unzip -o data/tp1.zip -d ./
+	curl -s -LJ -o data/tp1.zip --create-dirs https://github.com/guyfrancoeur/INF3135_A2020/raw/master/tp/tp1.zip > /dev/null && wget -O data/tp.zip -q https://github.com/guyfrancoeur/INF3135_A2020/raw/master/tp/tp3.zip || wget -O data/tp.zip -q https://github.com/guyfrancoeur/INF3135_A2020/raw/master/tp/tp2.zip || wget -O data/tp.zip -q https://github.com/guyfrancoeur/INF3135_A2020/raw/master/tp/tp1.zip
+	unzip -qq -o data/tp.zip -d ./
 	find data/* -delete
 	rmdir data
 
