@@ -1,0 +1,32 @@
+name: tp3
+ 
+on:
+  push:
+    branches: 
+      - tp3
+    paths: 
+      - 'malib.c'
+      - 'malib.h'
+      - 'outil3.h'
+      - 'outil3.c'
+      - 'tp3.c'
+      - '.gitignore/workflows/test-c.yml'
+      - 'ressources/10.txt'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+       
+      - name: Get tcv
+        run: make lib
+        
+      - name: Compiler outil3
+        run: gcc -Wall -Werror=vla -pedantic -std=c11 -c outil3.c -o outil3.o
+
+      - name: Compiler malib
+        run: gcc -Wall -Werror=vla -pedantic -std=c11 -c malib.c -o malib.o
+
+      - name: Compiler tp3
+        run: gcc -Wall -Werror=vla -pedantic -std=c11 tp3.c -o tp3 tcv.o malib.o -lm outil3.o -lm
