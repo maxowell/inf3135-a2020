@@ -25,13 +25,11 @@ Maxime Ouellet (OUEM03019908)
 
 `make tp1` : Produit ou met à jour l'éxécutable `tp1`.
 
-`make tp2` : Produit ou met à jour l'éxécutable `tp2`.
+`make tp3` : Produit ou met à jour l'éxécutable `tp3`.
 
-`make test-tp1a` : Exécute le programme `tp1`.
+`make malib.o` : Produit ou met à jour l'éxécutable `malib.o`.
 
-`make test-tp1b` : Exécute le programme `tp1` puis le script `liste.sh`.
-
-`make test-tp2` : Exécute le programme `tp2`.
+`make outil3.o` : Produit ou met à jour l'éxécutable `outil3.o`.
 
 `make clean` : Réinitialise le projet à son état d'origine.
 
@@ -51,23 +49,25 @@ Maxime Ouellet (OUEM03019908)
 
 `tp3.c` : Contient la fonction main de mon travail pratique 3.
 
-`malib.h` : Fichier headers contenant les fonctions de ma librairie que j'utilise pour le travail pratique 2.
+`malib.h` : Fichier headers contenant les fonctions de ma librairie que j'utilise pour le travail pratique 3.
 
-`malib.c` : Fichier contenant le code source des fonctions de ma librairie que j'utilise pour le travail pratique 2.
+`malib.c` : Fichier contenant le code source des fonctions de ma librairie que j'utilise pour le travail pratique 3.
 
-`outil3.h` :
+`outil3.h` : Fichier headers contenant les fonctions indépendantes de ma librairie que j'utilise pour le travail pratique 3.
 
-`outil3.c` :
+`outil3.c` :Fichier contenant le code source des fonctions indépendantes de ma librairie que j'utilise pour le travail pratique 3.
 
 `test-c.yml` : Fichier de test de compilation.
 
+`compilation.md` : Fichier des résultats des tests de compilation.
+
 `test-f.yml` : Fichier de test fonctionnel.
+
+`fonctionnel.md` : Fichier des résultats des tests fonctionnel.
 
 Répertoire `ressources` : Contient les images pour ce fichier et les fichiers contenant des transactions en entrée (Pour tester).
 
 `reflexion.md` : Démontre ma réflexion par rapport au développement de ce travail.
-
-`tp2.yml` : Workflow pour github.
 
 ## Processus de réflexion et démarche
 
@@ -87,44 +87,44 @@ Non-complété. En cours.
 
 ### Exigences :
 
-outil3.c, malib.c ... /4.0
+outil3.c, malib.c ... 4.0/4.0
 
 ### Compilation :
 
-Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. /1.0
+Il n'y a aucun avertissement ou erreur lors de la compilation et de l'exécution du projet. 1.0/1.0
 
 ### Makefile :
 
-Le fichier Makefile offre tous les services demandés. /1.0
+Le fichier Makefile offre tous les services demandés. 1.0/1.0
 
 ### test-c.yml :
 
-Produire le résultat dans compilation.md + badge /1.0
+Produire le résultat dans compilation.md + badge 1.0/1.0
 
 ### test-f.yml :
 
-Produire le résultat dans fonctionnel.md + badge /1.0
+Produire le résultat dans fonctionnel.md + badge 1.0/1.0
 
 ### badges yaml :
 
-Mettre les deux badges dans README.md /2.0
+Mettre les deux badges dans README.md 2.0/2.0
 
 ### Fonctionnabilité :
 
-Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. /7.0
+Les tests sont lancés et sont fonctionnels. Ils testent la totalité des restrictions des différentes fonctions. 7.0/7.0
 
 ### Branche (git) :
 
-La branche est une branche de développement nommée `tp3`. La branche `main` est vide. /1.0
+La branche est une branche de développement nommée `tp3`. La branche `main` est vide. 1.0/1.0
 
 ### Optimal (git) :
 
-On vise un dépôt pafait. /1.0
+On vise un dépôt pafait. 1.0/1.0
 
 ### Performance :
 
-Les performances sont bonnes. /1.0
+Les performances sont bonnes. 1.0/1.0
 
 ### Bonus :
 
-Les performances sont optimales. /1.0
+Les performances sont optimales. 1.0/1.0
