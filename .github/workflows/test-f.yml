@@ -33,7 +33,7 @@ jobs:
         run: cat ressources/entree.txt | ./tp3 -i -s -d -t | diff ressources/sortie02.txt - >> fonctionnel.md
 
       - name: Test 3
-        run: cat ressources/entree.txt | ./tp3 -i -s -d | diff ressources/sortie03.txt - >> foncionnel.md
+        run: cat ressources/entree.txt | ./tp3 -i -s -d | diff ressources/sortie03.txt - >> fonctionnel.md
       
       - name: push
         uses: actions-x/commit@v1
