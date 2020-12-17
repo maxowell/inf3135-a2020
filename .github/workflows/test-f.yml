@@ -12,6 +12,13 @@ on:
       - 'tp3.c'
       - '.gitignore/workflows/test-c.yml'
       - 'ressources/entree01.txt'
+      - 'ressources/sortie01.txt'
+      - 'ressources/entree02.txt'
+      - 'ressources/sortie02.txt'
+      - 'ressources/entree03.txt'
+      - 'ressources/sortie03.txt'
+      - 'ressources/entree04.txt'
+      - 'ressources/sortie04.txt'
 
 jobs:
   build:
@@ -20,13 +27,13 @@ jobs:
       - uses: actions/checkout@v2
        
       - name: Test 1
-        run: diff ressources/entree01.txt 
+        run: cat ressources/entree01.txt | ./tp3 | diff ressources/sortie01.txt -
         
       - name: Test 2
-        run: 
+        run: cat ressources/entree02.txt | ./tp3 | diff ressources/sortie02.txt -
 
       - name: Test 3
-        run: 
+        run: cat ressources/entree03.txt | ./tp3 | diff ressources/sortie03.txt -
 
       - name: Test 4
-        run: 
+        run: cat ressources/entree04.txt | ./tp3 | diff ressources/sortie04.txt -
