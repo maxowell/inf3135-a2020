@@ -1,4 +1,4 @@
-name: tp3 tests fonctionnels
+name: test-f
  
 on:
   push:
