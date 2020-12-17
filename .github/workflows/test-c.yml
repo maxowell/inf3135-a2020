@@ -1,4 +1,4 @@
-name: tp3
+name: tp3 tests compilation
  
 on:
   push:
@@ -38,3 +38,10 @@ jobs:
         run: |
           gcc -Wall -Werror=vla -pedantic -std=c11 tp3.c -o tp3 tcv.o malib.o -lm outil3.o -lm
           echo $? >> compilation.md
+          
+      - name: push
+        uses: actions-x/commit@v1
+        with:
+          name: GitHub Actions Autocommitter
+          branch: tp3
+          file: compilation.md
