@@ -3,8 +3,6 @@
 #include <math.h>
 #include <string.h>
 #include <stdbool.h>
-#include "tcv.h"
-#include "malib.h"
 #include "outil3.h"
 bool paramT = false;
 bool paramD = false;
