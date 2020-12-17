@@ -112,12 +112,6 @@ bool checkTime (size_t time, pastille_s *_past) {
 	_past->time = time;
 	return true;
 }
-float getDistance (signed short *_signal, unsigned char *_p) {
-	float m = (float) (-69 - (signed short)(signed long)_signal);
-	float n = (float) (10 * (size_t) _p);
-	float distance = (float) pow(10, m/n);
-	return distance;
-}
 void transaction21 (pastille_s *_past) {
 	printf("21 ");
 	if (_past->nombreTH != 0) printf("%.1f ", _past->sommeTH/_past->nombreTH);
@@ -132,4 +126,29 @@ void transaction22 (pastille_s *_past) {
 }
 void transaction23(pastille_s *_past) {
 	printf("23 %ld %ld %ld\n", _past->erreurTH/3, _past->erreurTA/3, _past->erreurPuls/3);
+}
+void getPastille (pastille_s *_past) {
+	_past->id = 9999;
+	_past->p = 2;
+	_past->sommeTH = 0;
+	_past->nombreTH = 0;
+	_past->erreurTH = 0;
+	_past->invalideTH = 0;
+	_past->sommeTA = 0;
+	_past->nombreTA = 0;
+	_past->erreurTA = 0;
+	_past->invalideTA = 0;
+	_past->sommePuls = 0;
+	_past->nombrePuls = 0;
+	_past->erreurPuls = 0;
+	_past->invalidePuls = 0;
+	_past->sizePN = 0;
+	_past->time = 0;
+	_past->nbTransInconnues = 0;
+	_past->nbTransDecroissantes = 0;
+	_past->nbTrans01 = 0;
+	_past->nbTrans02 = 0;
+	_past->nbTrans03 = 0;
+	_past->nbTrans04 = 0;
+	_past->nbTrans05 = 0;
 }
