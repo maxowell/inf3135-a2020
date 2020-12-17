@@ -1,3 +1,6 @@
+https://github.com/maxowell/inf3135-a2020/workflows/test-c.yml/badge.svg
+https://github.com/maxowell/inf3135-a2020/workflows/test-f.yml/badge.svg
+
 # Travail pratique 2
 
 ## Description
