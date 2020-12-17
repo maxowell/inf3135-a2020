@@ -27,13 +27,19 @@ jobs:
         run: make
        
       - name: Test 1
-        run: cat ressources/entree.txt | ./tp3 | diff ressources/sortie01.txt - >> fonctionnel.md
+        run: |
+          cat ressources/entree.txt | ./tp3 | diff ressources/sortie01.txt - 
+          echo $? >> fonctionnel.md
         
       - name: Test 2
-        run: cat ressources/entree.txt | ./tp3 -i -s -d -t | diff ressources/sortie02.txt - >> fonctionnel.md
+        run: |
+          cat ressources/entree.txt | ./tp3 -i -s -d -t | diff ressources/sortie02.txt - 
+          echo $? >> fonctionnel.md
 
       - name: Test 3
-        run: cat ressources/entree.txt | ./tp3 -i -s -d | diff ressources/sortie03.txt - >> fonctionnel.md
+        run: | 
+          cat ressources/entree.txt | ./tp3 -i -s -d | diff ressources/sortie03.txt - 
+          echo $? >> fonctionnel.md
       
       - name: push
         uses: actions-x/commit@v1
