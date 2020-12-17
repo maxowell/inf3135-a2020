@@ -1,4 +1,5 @@
 ![](https://github.com/maxowell/inf3135-a2020/workflows/test-c/badge.svg?branch=tp3)
+![](https://github.com/maxowell/inf3135-a2020/blob/tp3/.github/workflows/test-c.yml)
 ![](https://github.com/maxowell/inf3135-a2020/workflows/test-f/badge.svg?branch=tp3)
 
 # Travail pratique 2
