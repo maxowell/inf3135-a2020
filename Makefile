@@ -4,9 +4,6 @@ default:
 tp1:	tcv.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 -I/usr/include/CUnit -L/usr/lib/x86_64-linux-gnu tp1.c -o tp1 tcv.o -lcunit
 
-tp2:	malib.o
-	gcc -Wall -Werror=vla -pedantic -std=c11 tp2.c -o tp2 tcv.o malib.o -lm
-
 tp3:	malib.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 tp3.c -o tp3 tcv.o malib.o -lm outil3.o -lm
 
@@ -18,15 +15,6 @@ lib:
 	unzip -qq -o data/tp.zip -d ./
 	find data/* -delete
 	rmdir data
-
-test-tp1a:	tp1
-	./tp1
-
-test-tp1b:	tp1
-	./tp1 | bash liste.sh
-
-test-tp2:	tp2
-	./tp2
 
 tcv.o:
 	make lib
