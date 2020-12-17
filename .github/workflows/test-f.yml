@@ -24,7 +24,9 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Setup |
-        run: make
+        run: |
+          make
+          rm fonctionnel.md
        
       - name: Test 1
         run: |
