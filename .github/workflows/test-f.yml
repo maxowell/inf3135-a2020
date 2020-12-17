@@ -23,6 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Setup |
+        run: make
        
       - name: Test 1
         run: cat ressources/entree01.txt | ./tp3 | diff ressources/sortie01.txt - >> fonctionnel.md
