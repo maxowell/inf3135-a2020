@@ -1,5 +1,5 @@
-https://github.com/maxowell/inf3135-a2020/workflows/test-c.yml/badge.svg
-https://github.com/maxowell/inf3135-a2020/workflows/test-f.yml/badge.svg
+https://github.com/maxowell/inf3135-a2020/workflows/test-c/badge.svg
+https://github.com/maxowell/inf3135-a2020/workflows/test-f/badge.svg
 
 # Travail pratique 2
 
