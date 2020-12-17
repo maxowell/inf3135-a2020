@@ -11,11 +11,9 @@ on:
       - 'outil3.c'
       - 'tp3.c'
       - '.gitignore/workflows/test-f.yml'
-      - 'ressources/entree01.txt'
+      - 'ressources/entree.txt'
       - 'ressources/sortie01.txt'
-      - 'ressources/entree02.txt'
       - 'ressources/sortie02.txt'
-      - 'ressources/entree03.txt'
       - 'ressources/sortie03.txt'
 
 jobs:
@@ -28,13 +26,13 @@ jobs:
         run: make
        
       - name: Test 1
-        run: cat ressources/entree01.txt | ./tp3 | diff ressources/sortie01.txt -
+        run: cat ressources/entree.txt | ./tp3 | diff ressources/sortie01.txt - >> fonctionnel.md
         
       - name: Test 2
-        run: cat ressources/entree02.txt | ./tp3 -i -s -d -t | diff ressources/sortie02.txt -
+        run: cat ressources/entree.txt | ./tp3 -i -s -d -t | diff ressources/sortie02.txt - >> fonctionnel.md
 
       - name: Test 3
-        run: cat ressources/entree03.txt | ./tp3 -i -s -d | diff ressources/sortie03.txt -
+        run: cat ressources/entree.txt | ./tp3 -i -s -d | diff ressources/sortie03.txt - >> foncionnel.md
       
       - name: push
         uses: actions-x/commit@v1
