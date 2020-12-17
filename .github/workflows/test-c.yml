@@ -11,7 +11,6 @@ on:
       - 'outil3.c'
       - 'tp3.c'
       - '.gitignore/workflows/test-c.yml'
-      - 'ressources/10.txt'
 
 jobs:
   build:
