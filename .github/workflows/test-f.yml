@@ -10,30 +10,35 @@ on:
       - 'outil3.h'
       - 'outil3.c'
       - 'tp3.c'
-      - '.gitignore/workflows/test-c.yml'
+      - '.gitignore/workflows/test-f.yml'
       - 'ressources/entree01.txt'
       - 'ressources/sortie01.txt'
       - 'ressources/entree02.txt'
       - 'ressources/sortie02.txt'
       - 'ressources/entree03.txt'
       - 'ressources/sortie03.txt'
-      - 'ressources/entree04.txt'
-      - 'ressources/sortie04.txt'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Setup |
+        run: make
        
       - name: Test 1
-        run: cat ressources/entree01.txt | ./tp3 | diff ressources/sortie01.txt -
+        run: cat ressources/entree01.txt | ./tp3 | diff ressources/sortie01.txt - >> fonctionnel.md
         
       - name: Test 2
-        run: cat ressources/entree02.txt | ./tp3 | diff ressources/sortie02.txt -
+        run: cat ressources/entree02.txt | ./tp3 | diff ressources/sortie02.txt - >> fonctionnel.md
 
       - name: Test 3
-        run: cat ressources/entree03.txt | ./tp3 | diff ressources/sortie03.txt -
-
-      - name: Test 4
-        run: cat ressources/entree04.txt | ./tp3 | diff ressources/sortie04.txt -
+        run: cat ressources/entree03.txt | ./tp3 | diff ressources/sortie03.txt - >> fonctionnel.md
+      
+      - name: push
+        uses: actions-x/commit@v1
+        with:
+          name: GitHub Actions Autocommitter
+          branch: tp3
+          file: fonctionnel.md
