@@ -1,1 +1,32 @@
+name: tp3 tests fonctionnels
+ 
+on:
+  push:
+    branches: 
+      - tp3
+    paths: 
+      - 'malib.c'
+      - 'malib.h'
+      - 'outil3.h'
+      - 'outil3.c'
+      - 'tp3.c'
+      - '.gitignore/workflows/test-c.yml'
+      - 'ressources/entree01.txt'
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+       
+      - name: Test 1
+        run: diff ressources/entree01.txt 
+        
+      - name: Test 2
+        run: 
+
+      - name: Test 3
+        run: 
+
+      - name: Test 4
+        run: 
