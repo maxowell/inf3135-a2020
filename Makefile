@@ -1,4 +1,5 @@
-default: tp3
+default:
+	make -s tp3
 
 tp1:	tcv.o
 	gcc -Wall -Werror=vla -pedantic -std=c11 -I/usr/include/CUnit -L/usr/lib/x86_64-linux-gnu tp1.c -o tp1 tcv.o -lcunit
