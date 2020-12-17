@@ -31,7 +31,7 @@ jobs:
         run: cat ressources/entree01.txt | ./tp3 | diff ressources/sortie01.txt -
         
       - name: Test 2
-        run: cat ressources/entree02.txt | ./tp3 | diff ressources/sortie02.txt -
+        run: cat ressources/entree02.txt | ./tp3 -i -s -d -t | diff ressources/sortie02.txt -
 
       - name: Test 3
         run: cat ressources/entree03.txt | ./tp3 | diff ressources/sortie03.txt -
