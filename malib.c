@@ -51,10 +51,10 @@ void transaction01 (char *_trans, pastille_s *_past) {
 	char copy[100];
 	strcpy(copy, _trans);
 	char *temp = getInfo(copy,3);
-	if (strcmp(temp, "ERREUR\n") != 0 && validerTH_1((signed short)((float) atof(temp) * 10))) {
+	if (strstr(temp, ".") != NULL && validerTH_1((signed short)((float) atof(temp) * 10))) {
 		_past->sommeTH += (float) atof(temp);
 		_past->nombreTH++;
-	} else if (strcmp(temp, "ERREUR\n") == 0) {
+	} else if (strstr(temp, ".") == NULL) {
 		_past->erreurTH++;
 	} else if (!validerTH_1((signed short)((float) atof(temp) * 10))) {
 		_past->invalideTH++;
@@ -71,10 +71,10 @@ void transaction02 (char *_trans, pastille_s *_past, version_t *_version) {
 	} else {
 		validerTA = validerTA_3((signed short)((float) atof(temp) * 10));
 	}
-	if (strcmp(temp, "ERREUR\n") != 0 && validerTA) {
+	if (strstr(temp, ".") != NULL && validerTA) {
 		_past->sommeTA += (float) atof(temp);
 		_past->nombreTA++;
-	} else if (strcmp(temp, "ERREUR\n") == 0) {
+	} else if (strstr(temp, ".") == NULL) {
 		_past->erreurTA++;
 	} else if (!validerTA) {
 		_past->invalideTA++;
@@ -88,10 +88,10 @@ void transaction03 (char *_trans, pastille_s *_past, version_t *_version) {
 	bool validerPuls;
 	if (_version->build > 1004) validerPuls = validerPulsation_1(atoi(puls));
 	else validerPuls = validerPulsation_3((short)atoi(puls));
-	if (strcmp(puls, "ERREUR\n") != 0 && validerPuls) {
+	if (strstr(puls, ".") != NULL && validerPuls) {
 		_past->sommePuls += (size_t) atoi(puls);
 		_past->nombrePuls++;
-	} else if (strcmp(puls, "ERREUR\n") == 0) _past->erreurPuls++;
+	} else if (strstr(puls, ".") == NULL) _past->erreurPuls++;
 	else if (!validerPuls) _past->invalidePuls++;
 	_past->nbTrans03++;
 }
@@ -104,12 +104,12 @@ void transaction04 (char *_trans, pastille_s *_past, version_t *_version) {
 	if (validerSignal) qualiteSignal(_trans, _past);
 	_past->nbTrans04++;
 }
-bool checkTime (size_t time, pastille_s *_past) {
-	if (time < _past->time) {
+bool checkTime (size_t _time, pastille_s *_past) {
+	if (_time != 0 && _time <= _past->time) {
 		_past->nbTransDecroissantes++;
 		return false;
 	}
-	_past->time = time;
+	_past->time = _time;
 	return true;
 }
 void transaction21 (pastille_s *_past) {

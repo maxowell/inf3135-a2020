@@ -41,7 +41,7 @@ int main (int argc, char *argv[]) {
 			default :
 				past->nbTransInconnues++;
 				break;
-		}	
+		}
 	}
 	if (!paramT) transaction21(past);
 	if (!paramT) transaction22(past);
