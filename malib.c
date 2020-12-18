@@ -88,11 +88,11 @@ void transaction03 (char *_trans, pastille_s *_past, version_t *_version) {
 	bool validerPuls;
 	if (_version->build > 1004) validerPuls = validerPulsation_1(atoi(puls));
 	else validerPuls = validerPulsation_3((short)atoi(puls));
-	if (strstr(puls, ".") != NULL && validerPuls) {
+	if (validerPuls) {
 		_past->sommePuls += (size_t) atoi(puls);
 		_past->nombrePuls++;
-	} else if (strstr(puls, ".") == NULL) _past->erreurPuls++;
-	else if (!validerPuls) _past->invalidePuls++;
+	} else if (atoi(puls) == 0) _past->erreurPuls++;
+	else _past->invalidePuls++;
 	_past->nbTrans03++;
 }
 void transaction04 (char *_trans, pastille_s *_past, version_t *_version) {
