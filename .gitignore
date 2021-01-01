@@ -1,13 +1,8 @@
-*.out
-
-*.o
-
-tp1
-
-tp2
-
-tp3
-
-tcv.h
 
 *.guy
+*.o
+*.out
+tcv.h
+tp1
+tp2
+tp3
