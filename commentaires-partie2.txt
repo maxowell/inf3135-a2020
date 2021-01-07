@@ -1,0 +1,17 @@
+
+**** bravo recuperation tp3 ****
+*** compilation ***
+ 
+**** differences ****
+2
+3
+3
+2
+8
+0
+21
+1
+4
+2
+ 
+Correction fin.
